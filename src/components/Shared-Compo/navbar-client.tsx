@@ -43,7 +43,7 @@ export default function NavbarClient({ navLinks }: NavbarClientProps) {
             <Link
               key={link.href}
               href={link.href}
-              className={`px-3 py-2 rounded-lg text-sm xl:text-base font-medium transition-all relative whitespace-nowrap ${
+              className={`px-3 py-2 rounded-lg text-[15px]  font-medium transition-all relative whitespace-nowrap ${
                 active
                   ? "text-[var(--primary)] font-bold bg-[var(--primary-light)]"
                   : "text-[var(--text-2)] hover:text-[var(--primary)] hover:bg-[var(--surface-2)]"

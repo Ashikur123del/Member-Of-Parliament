@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { label: "নির্বাচনী এলাকা", href: "/constituency" },
   { label: "প্রকল্পসমূহ", href: "/projects" },
   { label: "সংবাদ/আপডেট", href: "/newsupdates" },
+  { label: "গ্যালারি", href: "/gallery" },
   { label: "সেবা ডেস্ক", href: "/servicedesk" },
   { label: "ইভেন্ট/সূচি", href: "/eventsschedule" },
   { label: "যোগাযোগ", href: "/contact" },
@@ -17,7 +18,7 @@ const NAV_LINKS = [
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full bg-[var(--surface)]/95 backdrop-blur-md border-b border-[var(--border)] transition-all">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20 relative gap-2 sm:gap-4">
           <Link 
             href="/" 

@@ -6,8 +6,6 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   FiTrendingUp,
-  FiClock,
-  FiCheckCircle,
   FiArrowRight,
   FiMapPin,
   FiDollarSign,
@@ -29,24 +27,24 @@ const PROJECTS_DATA = [
     title: "বাইপাইল-আশুলিয়া স্মার্ট ড্রেনেজ ও খাল উদ্ধার প্রকল্প",
     category: "running",
     categoryLabel: "চলমান",
-    location: "আশুলিয়া ও ধামসোনা",
+    location: "আশুলিয়া ও ধামসোনা",
     budget: "৪৫ কোটি টাকা",
     duration: "২০২৪ - ২০২৫",
     progress: 70,
     description: "বর্ষাকালে আশুলিয়া ও বাইপাইল এলাকার জলাবদ্ধতা দূরীকরণে আধুনিক ড্রেনেজ নির্মাণ এবং প্রধান খালগুলো খনন কাজ চলমান।",
-    image: "https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&q=80&w=600",
+    image: "https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&q=80&w=800",
   },
   {
     id: 2,
     title: "আশুলিয়া ২০০ শয্যাবিশিষ্ট বিশেষায়িত সরকারি হাসপাতাল",
     category: "upcoming",
     categoryLabel: "পরিকল্পনাধীন",
-    location: "জিরাবো, আশুলিয়া",
+    location: "জিরাবো, আশুলিয়া",
     budget: "১২০ কোটি টাকা",
     duration: "২০২৫ - ২০২৭",
     progress: 25,
     description: "পোশাকশিল্পের লাখ লাখ শ্রমিক ও সাধারণ নাগরিকদের বিনামূল্যে আধুনিক চিকিৎসা সেবায় বিশেষায়িত হাসপাতাল স্থাপন।",
-    image: "https://images.unsplash.com/photo-1587354246490-7e26e63fdb6f?auto=format&fit=crop&q=80&w=600",
+    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800",
   },
   {
     id: 3,
@@ -58,7 +56,7 @@ const PROJECTS_DATA = [
     duration: "২০২৩ - ২০২৪",
     progress: 100,
     description: "তরুণদের আত্মকর্মসংস্থান সৃষ্টিতে আধুনিক কম্পিউটার ল্যাব ও হাই-স্পিড ইন্টারনেট সমৃদ্ধ হাই-টেক ট্রেনিং সেন্টার।",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=600",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800",
   },
   {
     id: 4,
@@ -70,7 +68,7 @@ const PROJECTS_DATA = [
     duration: "২০২৪ - ২০২৫",
     progress: 55,
     description: "মহাসড়কে সড়ক দুর্ঘটনা হ্রাস এবং পথচারীদের নিরাপদে রাস্তা পারাপারের জন্য ৩টি আধুনিক ফুটওভার ব্রিজ নির্মাণ।",
-    image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=600",
+    image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=800",
   },
 ];
 
