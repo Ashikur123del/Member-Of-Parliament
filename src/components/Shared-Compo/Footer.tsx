@@ -1,91 +1,100 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import {
   FiMapPin,
   FiPhone,
   FiMail,
-  FiSend,
   FiFacebook,
   FiTwitter,
   FiYoutube,
   FiLinkedin,
-  FiHeart,
-  FiArrowUpRight,
 } from "react-icons/fi";
 
-export default function Footer() {
+import Image5 from "@/assets/img-5.jpg";
+
+export default function Footer(): React.ReactElement {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-[var(--surface-2)] text-[var(--text)] border-t border-[var(--border)] pt-12 sm:pt-16 pb-8 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 pb-12 border-b border-[var(--border)]"> 
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 pb-12 border-b border-[var(--border)]">
+          
+          {/* Logo & Info */}
           <div className="lg:col-span-4 space-y-4">
-            <Link href="/" className="inline-flex items-center gap-2">
-              <div className="w-10 h-10 rounded-xl bg-[var(--primary)] text-white flex items-center justify-center font-bold text-xl shadow-md">
-                এম
+            <Link href="/" className="inline-flex items-center gap-3">
+              <div className="relative w-12 h-12 rounded-full overflow-hidden border border-[var(--border)] shrink-0 shadow-sm">
+                <Image
+                  src={Image5}
+                  alt="দেওয়ান মঈনুদ্দিন বিপ্লব"
+                  fill
+                  className="object-cover"
+                  sizes="48px"
+                />
               </div>
               <div className="flex flex-col">
-                <span className="font-extrabold text-lg sm:text-xl tracking-tight leading-tight">
-                  এমপি পোর্টফোলিও
+                <span className="font-black text-xl sm:text-2xl tracking-tight leading-tight">
+                  দেওয়ান মঈনুদ্দিন বিপ্লব
                 </span>
-                <span className="text-[11px] text-[var(--text-2)] font-medium">
+                <span className="text-xs text-[var(--text-2)] font-bold">
                   সাভার ও আশুলিয়া (ঢাকা-১৯)
                 </span>
               </div>
             </Link>
 
-            <p className="text-xs sm:text-sm text-[var(--text-2)] leading-relaxed">
+            <p className="text-sm sm:text-base text-[var(--text-2)] leading-relaxed font-medium">
               সাভার ও আশুলিয়া এলাকার সার্বিক উন্নয়ন, নাগরিক সেবা ডিজিটালাইজেশন এবং সরাসরি জনগণের মতামত ও সমস্যা সমাধানের একটি ডিজিটাল প্ল্যাটফর্ম।
             </p>
 
             {/* Social Links */}
-            <div className="flex items-center gap-2 pt-2">
+            <div className="flex items-center gap-2.5 pt-2">
               <a
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="w-9 h-9 rounded-xl bg-[var(--surface)] border border-[var(--border)] flex items-center justify-center text-[var(--text-2)] hover:text-[var(--primary)] hover:border-[var(--primary)] transition-all"
+                className="w-10 h-10 rounded-xl bg-[var(--surface)] border border-[var(--border)] flex items-center justify-center text-[var(--text-2)] hover:text-[var(--primary)] hover:border-[var(--primary)] transition-all text-lg"
               >
-                <FiFacebook className="text-base" />
+                <FiFacebook />
               </a>
               <a
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Twitter"
-                className="w-9 h-9 rounded-xl bg-[var(--surface)] border border-[var(--border)] flex items-center justify-center text-[var(--text-2)] hover:text-[var(--primary)] hover:border-[var(--primary)] transition-all"
+                className="w-10 h-10 rounded-xl bg-[var(--surface)] border border-[var(--border)] flex items-center justify-center text-[var(--text-2)] hover:text-[var(--primary)] hover:border-[var(--primary)] transition-all text-lg"
               >
-                <FiTwitter className="text-base" />
+                <FiTwitter />
               </a>
               <a
                 href="https://youtube.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube"
-                className="w-9 h-9 rounded-xl bg-[var(--surface)] border border-[var(--border)] flex items-center justify-center text-[var(--text-2)] hover:text-rose-500 hover:border-rose-500 transition-all"
+                className="w-10 h-10 rounded-xl bg-[var(--surface)] border border-[var(--border)] flex items-center justify-center text-[var(--text-2)] hover:text-rose-500 hover:border-rose-500 transition-all text-lg"
               >
-                <FiYoutube className="text-base" />
+                <FiYoutube />
               </a>
               <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="w-9 h-9 rounded-xl bg-[var(--surface)] border border-[var(--border)] flex items-center justify-center text-[var(--text-2)] hover:text-[var(--primary)] hover:border-[var(--primary)] transition-all"
+                className="w-10 h-10 rounded-xl bg-[var(--surface)] border border-[var(--border)] flex items-center justify-center text-[var(--text-2)] hover:text-[var(--primary)] hover:border-[var(--primary)] transition-all text-lg"
               >
-                <FiLinkedin className="text-base" />
+                <FiLinkedin />
               </a>
             </div>
           </div>
 
+          {/* Quick Navigation */}
           <div className="lg:col-span-2 space-y-4">
-            <h3 className="text-sm font-bold uppercase tracking-wider text-[var(--text)]">
+            <h3 className="text-base font-extrabold uppercase tracking-wider text-[var(--text)]">
               দ্রুত নেভিগেশন
             </h3>
-            <ul className="space-y-2.5 text-xs sm:text-sm">
+            <ul className="space-y-3 text-sm sm:text-base font-semibold">
               <li>
                 <Link
                   href="/about"
@@ -129,11 +138,12 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Citizen Services */}
           <div className="lg:col-span-3 space-y-4">
-            <h3 className="text-sm font-bold uppercase tracking-wider text-[var(--text)]">
+            <h3 className="text-base font-extrabold uppercase tracking-wider text-[var(--text)]">
               নাগরিক সেবা ও সহায়তা
             </h3>
-            <ul className="space-y-2.5 text-xs sm:text-sm">
+            <ul className="space-y-3 text-sm sm:text-base font-semibold">
               <li>
                 <Link
                   href="/help/request"
@@ -169,25 +179,25 @@ export default function Footer() {
             </ul>
           </div>
 
-      
+          {/* Office Info */}
           <div className="lg:col-span-3 space-y-4">
-            <h3 className="text-sm font-bold uppercase tracking-wider text-[var(--text)]">
+            <h3 className="text-base font-extrabold uppercase tracking-wider text-[var(--text)]">
               অফিস তথ্য
             </h3>
-            <ul className="space-y-3 text-xs sm:text-sm text-[var(--text-2)]">
+            <ul className="space-y-3.5 text-sm sm:text-base text-[var(--text-2)] font-semibold">
               <li className="flex items-start gap-2.5">
-                <FiMapPin className="text-[var(--primary)] shrink-0 mt-1" />
+                <FiMapPin className="text-[var(--primary)] shrink-0 mt-1 text-lg" />
                 <span>সাভার কার্যালয়: সিটি সেন্টার, সাভার বাসস্ট্যান্ড, সাভার, ঢাকা।</span>
               </li>
               <li className="flex items-center gap-2.5">
-                <FiPhone className="text-[var(--primary)] shrink-0" />
-                <a href="tel:+8801700000000" className="hover:text-[var(--primary)]">
+                <FiPhone className="text-[var(--primary)] shrink-0 text-lg" />
+                <a href="tel:+8801700000000" className="hover:text-[var(--primary)] font-bold">
                   +৮৮০ ১৭০০-০০০০০০
                 </a>
               </li>
               <li className="flex items-center gap-2.5">
-                <FiMail className="text-[var(--primary)] shrink-0" />
-                <a href="mailto:info@mpportal.gov.bd" className="hover:text-[var(--primary)]">
+                <FiMail className="text-[var(--primary)] shrink-0 text-lg" />
+                <a href="mailto:contact@mp-savarasulia.gov.bd" className="hover:text-[var(--primary)] font-bold">
                   contact@mp-savarasulia.gov.bd
                 </a>
               </li>
@@ -196,7 +206,7 @@ export default function Footer() {
 
         </div>
 
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[var(--text-2)] text-center sm:text-left">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-[var(--text-2)] font-semibold text-center sm:text-left">
           <p>
             © {currentYear} এমপি অফিশিয়াল পোর্টাল। সর্বস্বত্ব সংরক্ষিত।
           </p>

@@ -1,0 +1,76 @@
+"use client";
+
+import React from "react";
+import { FiCheckSquare, FiClock, FiLayers, FiUsers } from "react-icons/fi";
+import { motion } from "framer-motion";
+
+export function ProjectStats() {
+  const stats = [
+    { label: "সম্পন্ন প্রকল্প", value: "৩৫টি", icon: FiCheckSquare },
+    { label: "চলমান উন্নয়ন", value: "১২টি", icon: FiClock },
+    { label: "পরিকল্পিত প্রজেক্ট", value: "৮টি", icon: FiLayers },
+    { label: "উপকৃত পরিবার", value: "১.৫ লক্ষ+", icon: FiUsers },
+  ];
+
+  // Container variants for staggered entrance animation
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15, // একটি কার্ডের পর আরেকটি কার্ডের আসার সময়
+      },
+    },
+  };
+
+  // Individual Card Variants
+  const cardVariants = {
+    hidden: { opacity: 0, y: 25 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
+  return (
+    <section className="py-8 bg-[var(--surface-2)] border-y border-[var(--border)] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-2 lg:grid-cols-4 gap-4"
+        >
+          {stats.map((item, idx) => {
+            const Icon = item.icon;
+            return (
+              <motion.div
+                key={idx}
+                variants={cardVariants}
+                whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                className="p-4 sm:p-5 rounded-2xl bg-[var(--surface)] border border-[var(--border)] flex items-center gap-3.5 shadow-sm hover:shadow-md transition-shadow duration-300 group"
+              >
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[var(--primary-light)] text-[var(--primary)] flex items-center justify-center text-xl sm:text-2xl shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  <Icon />
+                </div>
+
+                <div>
+                  <span className="text-lg sm:text-2xl font-black text-[var(--text)] block leading-none mb-1">
+                    {item.value}
+                  </span>
+                  <span className="text-xs sm:text-sm font-medium text-[var(--muted)] truncate block">
+                    {item.label}
+                  </span>
+                </div>
+              </motion.div>
+            );
+          })}
+        </motion.div>
+      </div>
+    </section>
+  );
+}

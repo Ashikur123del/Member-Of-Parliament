@@ -21,12 +21,21 @@ export default function NavbarClient({ navLinks }: NavbarClientProps) {
   const pathname = usePathname();
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setIsOpen(false);
+  }, [pathname]);
 
- useEffect(() => {
-  if (!isOpen) return;
-  const id = setTimeout(() => setIsOpen(false), 0);
-  return () => clearTimeout(id);
-}, [pathname, isOpen]);
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
@@ -35,15 +44,14 @@ export default function NavbarClient({ navLinks }: NavbarClientProps) {
 
   return (
     <>
-  
-      <nav className="hidden xl:flex items-center gap-1">
+      <nav className="hidden 2xl:flex items-center gap-0.5 xl:gap-1">
         {navLinks.map((link) => {
           const active = isActive(link.href);
           return (
             <Link
               key={link.href}
               href={link.href}
-              className={`px-3 py-2 rounded-lg text-[15px]  font-medium transition-all relative whitespace-nowrap ${
+              className={`px-2.5 py-1.5 xl:px-3 xl:py-2 font-semibold rounded-lg text-xs xl:text-sm font-medium transition-all relative whitespace-nowrap ${
                 active
                   ? "text-[var(--primary)] font-bold bg-[var(--primary-light)]"
                   : "text-[var(--text-2)] hover:text-[var(--primary)] hover:bg-[var(--surface-2)]"
@@ -57,31 +65,32 @@ export default function NavbarClient({ navLinks }: NavbarClientProps) {
           );
         })}
       </nav>
-      <div className="hidden xl:flex items-center gap-2.5 shrink-0">
+
+      <div className="hidden 2xl:flex items-center gap-2 shrink-0">
         <ThemeToggle />
 
         <Link
           href="/help/request"
-          className={`btn-outline text-sm xl:text-base font-medium px-3.5 py-2 flex items-center gap-2 transition-all whitespace-nowrap ${
+          className={`btn-outline text-xs xl:text-sm font-medium px-3 py-2 flex items-center gap-1.5 transition-all whitespace-nowrap rounded-lg border border-[var(--border)] hover:border-[var(--primary)] ${
             isActive("/help/request")
-              ? "bg-[var(--surface-2)] border-[var(--primary)] text-[var(--primary)]"
+              ? "bg-[var(--surface-2)] border-[var(--primary)] text-[var(--primary)] font-bold"
               : ""
           }`}
         >
-          <FiMessageSquare className="text-base xl:text-lg" />
+          <FiMessageSquare className="text-sm xl:text-base" />
           <span>অভিযোগ জানান</span>
         </Link>
 
         <Link
           href="/help"
-          className="btn-primary text-sm xl:text-base font-semibold shadow-sm hover:shadow transition-all flex items-center gap-2 px-4 py-2 whitespace-nowrap"
+          className="btn-primary text-xs xl:text-sm font-semibold shadow-sm hover:shadow transition-all flex items-center gap-1.5 px-3.5 py-2 whitespace-nowrap rounded-lg bg-[var(--primary)] text-white hover:opacity-90"
         >
-          <FiHelpCircle className="text-base xl:text-lg" />
+          <FiHelpCircle className="text-sm xl:text-base" />
           <span>সাহায্য নিন</span>
         </Link>
       </div>
 
-      <div className="flex xl:hidden items-center gap-1.5 sm:gap-2 shrink-0">
+      <div className="flex 2xl:hidden items-center gap-1.5 sm:gap-2 shrink-0">
         <ThemeToggle />
 
         <button
@@ -89,21 +98,21 @@ export default function NavbarClient({ navLinks }: NavbarClientProps) {
           type="button"
           aria-expanded={isOpen}
           aria-label="Toggle navigation menu"
-          className="p-2 rounded-lg text-[var(--text)] bg-[var(--surface-2)] hover:bg-[var(--border)] focus:outline-none transition-colors"
+          className="p-2 sm:p-2.5 rounded-xl text-[var(--text)] bg-[var(--surface-2)] hover:bg-[var(--border)] focus:outline-none transition-colors border border-[var(--border)]"
         >
-          {isOpen ? <FiX className="w-5 h-5 sm:w-6 sm:h-6" /> : <FiMenu className="w-5 h-5 sm:w-6 sm:h-6" />}
+          {isOpen ? <FiX className="w-5 h-5 sm:w-6 sm:h-6 text-[var(--primary)]" /> : <FiMenu className="w-5 h-5 sm:w-6 sm:h-6" />}
         </button>
       </div>
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -8 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
+            exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="xl:hidden absolute top-full left-0 right-0 w-full bg-[var(--surface)] border-b border-[var(--border)] shadow-2xl z-50 backdrop-blur-lg"
+            className="2xl:hidden absolute top-full left-0 right-0 w-full bg-[var(--surface)] border-b border-[var(--border)] shadow-2xl z-50 backdrop-blur-xl"
           >
-            <div className="px-4 pt-3 pb-6 space-y-1.5 max-h-[calc(100vh-80px)] overflow-y-auto">
+            <div className="px-4 py-5 space-y-1.5 max-h-[calc(100vh-80px)] overflow-y-auto">
               {navLinks.map((link) => {
                 const active = isActive(link.href);
                 return (
@@ -111,7 +120,7 @@ export default function NavbarClient({ navLinks }: NavbarClientProps) {
                     key={link.href}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className={`block px-4 py-3 rounded-xl text-base font-semibold transition-all ${
+                    className={`block px-4 py-3 rounded-xl font-semibold text-sm sm:text-base font-semibold transition-all ${
                       active
                         ? "bg-[var(--primary-light)] text-[var(--primary)] border-l-4 border-[var(--primary)]"
                         : "text-[var(--text)] hover:bg-[var(--surface-2)] hover:text-[var(--primary)]"
@@ -122,21 +131,21 @@ export default function NavbarClient({ navLinks }: NavbarClientProps) {
                 );
               })}
 
-              <div className="pt-4 mt-3 border-t border-[var(--border)] flex flex-col gap-2.5">
+              <div className="pt-4 mt-4 border-t border-[var(--border)] flex flex-col gap-2.5">
                 <Link
                   href="/help/request"
                   onClick={() => setIsOpen(false)}
-                  className="btn-outline text-center text-base w-full py-2.5 flex items-center justify-center gap-2 font-medium"
+                  className="w-full py-3 px-4 rounded-xl border border-[var(--border)] text-center text-sm font-semibold flex items-center justify-center gap-2 text-[var(--text)] hover:border-[var(--primary)] bg-[var(--surface-2)]"
                 >
-                  <FiMessageSquare className="text-lg" />
+                  <FiMessageSquare className="text-base text-[var(--primary)]" />
                   <span>অভিযোগ জানান</span>
                 </Link>
                 <Link
                   href="/help"
                   onClick={() => setIsOpen(false)}
-                  className="btn-primary text-center text-base w-full py-2.5 flex items-center justify-center gap-2 font-semibold shadow-md"
+                  className="w-full py-3 px-4 rounded-xl text-center text-sm font-bold flex items-center justify-center gap-2 bg-[var(--primary)] text-white shadow-md hover:opacity-90"
                 >
-                  <FiHelpCircle className="text-lg" />
+                  <FiHelpCircle className="text-base" />
                   <span>সাহায্য নিন</span>
                 </Link>
               </div>

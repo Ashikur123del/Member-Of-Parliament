@@ -38,11 +38,11 @@ export default function HeroBio({
   actions = [],
 }: HeroBioProps) {
   return (
-    <div className="w-full">
-      <div className="relative overflow-hidden bg-[var(--surface-2)] p-5 sm:p-8 md:p-10 lg:p-14 border border-[var(--border)] shadow-md transition-all duration-300">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+    <div className="w-full bg-[var(--surface-2)] border-b border-[var(--border)]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative overflow-hidden p-5 sm:p-8 md:p-10 lg:p-14 transition-all duration-300">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center justify-between">
           <div className="lg:col-span-5 flex justify-center items-center">
-            <div className="relative group w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[384px]">
+            <div className="relative group w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[500px]">
               <div className="absolute -inset-1.5 bg-gradient-to-tr from-[var(--primary)] to-emerald-400 rounded-3xl blur-md opacity-30 group-hover:opacity-60 transition duration-500"></div>
 
               <div className="relative w-full aspect-square rounded-2xl overflow-hidden border-2 border-[var(--border)] bg-[var(--surface)] p-2 shadow-xl">
@@ -67,7 +67,6 @@ export default function HeroBio({
           </div>
 
           <div className="lg:col-span-7 space-y-4 sm:space-y-6 text-center lg:text-left">
-
             {badgeText && (
               <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-[var(--primary-light)] text-[var(--primary)] text-xs sm:text-sm font-bold border border-[var(--primary)]/25 shadow-sm">
                 {BadgeIcon && <BadgeIcon className="text-sm sm:text-base" />}
@@ -76,7 +75,7 @@ export default function HeroBio({
             )}
 
             <div className="space-y-1.5 sm:space-y-2">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-[var(--text)] leading-tight">
+              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-[var(--text)] leading-tight">
                 {name}
               </h1>
               <p className="text-base sm:text-xl md:text-2xl font-extrabold text-[var(--primary)]">
@@ -84,7 +83,6 @@ export default function HeroBio({
               </p>
             </div>
 
-        
             <p className="text-sm sm:text-base md:text-lg text-[var(--text-2)] leading-relaxed max-w-2xl font-normal mx-auto lg:mx-0">
               {description}
             </p>
@@ -94,12 +92,12 @@ export default function HeroBio({
                 {stats.map((stat, idx) => (
                   <div
                     key={idx}
-                    className="p-3 sm:p-4 bg-[var(--surface)] rounded-2xl border border-[var(--border)] shadow-sm hover:border-[var(--primary)]/40 transition-colors"
+                    className="p-2 sm:p-4 bg-[var(--surface)] rounded-2xl border border-[var(--border)] shadow-sm hover:border-[var(--primary)]/40 transition-colors"
                   >
                     <span className="block text-[11px] sm:text-xs font-medium text-[var(--muted)] mb-0.5 sm:mb-1 truncate">
                       {stat.label}
                     </span>
-                    <span className="text-base sm:text-lg md:text-xl font-black text-[var(--text)] block truncate">
+                    <span className="text-[13px] sm:text-lg md:text-xl font-black text-[var(--text)] block truncate">
                       {stat.value}
                     </span>
                   </div>
@@ -107,7 +105,6 @@ export default function HeroBio({
               </div>
             )}
 
-        
             {actions.length > 0 && (
               <div className="pt-2 sm:pt-3 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start items-center">
                 {actions.map((btn, idx) => {
@@ -127,19 +124,20 @@ export default function HeroBio({
                         {btn.label}
                       </span>
                       {BtnIcon && (
-                        <BtnIcon className={`text-base sm:text-lg shrink-0 ${isPrimary ? "text-white" : ""}`} />
+                        <BtnIcon
+                          className={`text-base sm:text-lg shrink-0 ${
+                            isPrimary ? "text-white" : ""
+                          }`}
+                        />
                       )}
                     </Link>
                   );
                 })}
               </div>
             )}
-
           </div>
-
         </div>
-
       </div>
     </div>
-  ); 
+  );
 }

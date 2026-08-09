@@ -13,7 +13,7 @@ export interface TextSlideItem {
 
 export interface TextSliderProps {
   items?: TextSlideItem[];
-  duration?: number; // এক চক্কর সম্পন্ন হতে কত সেকেণ্ড সময় নেবে
+  duration?: number; 
   pauseOnHover?: boolean;
   bgVariant?: "primary" | "surface";
 }
@@ -27,11 +27,11 @@ const defaultItems: TextSlideItem[] = [
 
 export default function TextSlider({
   items = defaultItems,
-  duration = 25,
+  duration = 40,
   pauseOnHover = true,
   bgVariant = "primary",
 }: TextSliderProps) {
-  // অনবরত কোনো ল্যাগ ছাড়া ইনফিনিট স্ক্রোলের জন্য ডুপ্লিকেট আইটেম
+
   const duplicatedItems = [...items, ...items, ...items, ...items];
 
   return (
@@ -43,7 +43,6 @@ export default function TextSlider({
             : "bg-[var(--surface-2)] text-[var(--text)]"
         }`}
       >
-        {/* সর্বশেষ আপডেট ফিক্সড ব্যাজ */}
         <div
           className={`shrink-0 z-20 px-3.5 py-1.5 ml-3 rounded-lg text-xs font-bold flex items-center gap-2 shadow-md ${
             bgVariant === "primary"
@@ -55,7 +54,6 @@ export default function TextSlider({
           <span className="whitespace-nowrap">সর্বশেষ আপডেট</span>
         </div>
 
-        {/* Framer Motion Marquee Container */}
         <div className="relative w-full overflow-hidden flex items-center ml-3">
           <motion.div
             className="flex items-center gap-8 whitespace-nowrap shrink-0"

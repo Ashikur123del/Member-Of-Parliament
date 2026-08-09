@@ -4,6 +4,11 @@ import HeroBio from "@/components/About-Compo/HeroBio";
 import { FiMapPin, FiArrowRight, FiPhoneCall } from "react-icons/fi";
 import ConstituencyImg from "@/assets/img-6.jpg"; 
 import { AreaOverView } from "@/components/Constituency/AreaOverView";
+import { UnionList } from "@/components/Constituency/UnionList";
+import { DevelopmentFocus } from "@/components/Constituency/DevelopmentFocus";
+import { EmergencyHelpline } from "@/components/Constituency/EmergencyHelpline";
+import { AreaProblemForm } from "@/components/Constituency/AreaProblemForm";
+
 
 const ConstituencyPage = () => {
   return (
@@ -38,11 +43,11 @@ const ConstituencyPage = () => {
       />
 
    
-       <AreaOverView />
-     {/* <UnionList />
+      <AreaOverView />
+      <UnionList />
       <DevelopmentFocus />
       <EmergencyHelpline />
-      <AreaProblemForm /> */}
+      <AreaProblemForm /> 
     </main>
   );
 };

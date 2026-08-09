@@ -5,10 +5,13 @@ import Navbar from "@/components/Shared-Compo/Navbar";
 import { ThemeProvider } from "@/components/Theme-Provider/theme-provider";
 import Footer from "@/components/Shared-Compo/Footer";
 import TextSlider from "@/components/TextSlider";
+import { ToastContainer } from "react-toastify";
 
 const hindSiliguri = Hind_Siliguri({
   subsets: ["bengali", "latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "600", "700"],
+  display: "swap",
+  preload: false, 
   variable: "--font-hind-siliguri",
 });
 
@@ -24,23 +27,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="bn" className={hindSiliguri.variable} suppressHydrationWarning>
-      <body className={`${hindSiliguri.className} min-h-screen flex flex-col bg-[var(--bg)] text-[var(--text)] antialiased`}>
+      <body className={`${hindSiliguri.className} min-h-screen flex flex-col bg-[var(--bg)] text-[var(--text)] antialiased`} suppressHydrationWarning>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          {/* নিউজ/আপডেট স্লাইডার */}
           <TextSlider />
-          
-          {/* মূল নেভিগেশন বার */}
+          <ToastContainer />
           <Navbar />
-
-          {/* পেজের মূল কনটেন্ট */}
           <main className="flex-grow">{children}</main>
-
-          {/* ফুটার */}
           <Footer />
         </ThemeProvider>
       </body>
