@@ -10,19 +10,17 @@ import { useState } from "react";
 
 export default function NewsPage() {
   const [selectedCategory, setSelectedCategory] = useState("সব");
+
   const [searchQuery, setSearchQuery] = useState("");
 
   const featured = sampleNews.find((n) => n.isFeatured) || sampleNews[0];
 
   const filteredNews = sampleNews.filter((item) => {
-    const matchesCategory =
-      selectedCategory === "সব" || item.category === selectedCategory;
-    const matchesSearch =
-      item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      item.summary.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesCategory = selectedCategory === "সব" || item.category === selectedCategory;
+    const matchesSearch = item.title.toLowerCase().includes(searchQuery.toLowerCase()) || item.summary.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
-
+ 
   return (
     <main className="min-h-screen bg-[var(--surface)]">
       <NewsHero

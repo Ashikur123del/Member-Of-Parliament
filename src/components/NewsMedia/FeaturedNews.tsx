@@ -14,7 +14,6 @@ export const FeaturedNews: React.FC<FeaturedNewsProps> = ({ news }) => {
   return (
     <section className="mb-12">
       <div className="w-full flex flex-col lg:flex-row rounded-3xl bg-[var(--surface)] border border-[var(--border)] hover:border-[var(--primary)]/40 transition-all duration-300 shadow-sm overflow-hidden group">
-        {/* Left: Unsplash Image Area */}
         <div className="relative w-full lg:w-3/5 min-h-[300px] sm:min-h-[380px] lg:min-h-[440px] bg-[var(--surface-2)] overflow-hidden">
           <Image
             src={news.image}
@@ -30,7 +29,6 @@ export const FeaturedNews: React.FC<FeaturedNewsProps> = ({ news }) => {
           </span>
         </div>
 
-        {/* Right: Detailed Text Content */}
         <div className="p-6 sm:p-8 lg:p-10 w-full lg:w-2/5 flex flex-col justify-between space-y-4">
           <div className="space-y-3">
             <div className="flex items-center gap-3 text-xs sm:text-sm text-[var(--muted)] font-medium">

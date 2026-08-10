@@ -34,7 +34,6 @@ export default function AboutPage() {
 
         <VisionMission />
 
-        {/* 2. Main Content Grid */}
         <EducationWork
           personalHeroImage={f3}
           educationTitle="শিক্ষাজীবন"

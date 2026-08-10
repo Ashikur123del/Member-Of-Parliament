@@ -88,7 +88,7 @@ export default function HeroBio({
             </p>
 
             {stats.length > 0 && (
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3.5 pt-2 text-left">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3.5 pt-2  text-center md:text-left">
                 {stats.map((stat, idx) => (
                   <div
                     key={idx}

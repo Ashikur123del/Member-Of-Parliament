@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
 import Image from "next/image";
 import { FiPlayCircle, FiClock, FiCalendar, FiX } from "react-icons/fi";
+import R2 from '@/assets/r-2.webp'
+import { useState } from "react";
 
 interface VideoNews {
   id: number;
@@ -11,7 +12,7 @@ interface VideoNews {
   description: string;
   date: string;
   duration: string;
-  image: string;
+  image: string | typeof R2;
   videoUrl: string;
 }
 
@@ -40,11 +41,9 @@ export const VideoNewsSection = () => {
         "পোশাক শিল্প এলাকার হাজারো শ্রমিকের ফ্রি হেলথ চেকআপ এবং জরুরি স্বাস্থ্য সেবা নিশ্চিতকরণে গৃহীত পদক্ষেপ নিয়ে গুরুত্বপূর্ণ ভিডিও সাক্ষাৎকার।",
       date: "০৬ আগস্ট, ২০২৬",
       duration: "০৬:৩০ মিনিট",
-      image:
-        "https://images.unsplash.com/photo-1577495508048-b635879837f1?q=80&w=1200&auto=format&fit=crop",
-      // Embed URL Format for Reel 2
-      videoUrl:
-        "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2384738655268243&show_text=false",
+      image: "https://images.unsplash.com/photo-1577495508048-b635879837f1?q=80&w=1200&auto=format&fit=crop",
+  
+      videoUrl: "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2384738655268243&show_text=false",
     },
     {
       id: 3,
@@ -54,9 +53,7 @@ export const VideoNewsSection = () => {
         "দীর্ঘদিনের জলাবদ্ধতা দূর করতে নতুন আন্ডারগ্রাউন্ড ক্যানাল ও ড্রেনেজ লাইনের নির্মাণ কাজ কীভাবে সার্বিক চিত্র বদলে দিচ্ছে তার ওপর বিশেষ প্রতিবেদন।",
       date: "০৩ আগস্ট, ২০২৬",
       duration: "০৩:৪৫ মিনিট",
-      image:
-        "https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?q=80&w=1200&auto=format&fit=crop",
-      // Embed URL Format for Reel 3
+      image:  R2,
       videoUrl:
         "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2240649190104442&show_text=false",
     },
@@ -68,9 +65,7 @@ export const VideoNewsSection = () => {
         "স্থানীয় সাহিত্য অনুরাগী ও তরুণ প্রজন্মের পদচারণায় মুখরিত সাভার কেন্দ্রীয় মেলার উদ্বোধনী অনুষ্ঠান এবং চিত্রাঙ্কন প্রতিযোগিতার বিশেষ চিত্র।",
       date: "২৮ জুলাই, ২০২৬",
       duration: "০৫:১০ মিনিট",
-      image:
-        "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=1200&auto=format&fit=crop",
-      // Embed URL Format for Reel 4
+      image:"https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=1200&auto=format&fit=crop",
       videoUrl:
         "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1070192922234617&show_text=false",
     },
@@ -78,7 +73,8 @@ export const VideoNewsSection = () => {
 
   return (
     <section className="my-12 p-6 sm:p-10 rounded-3xl bg-[var(--surface-2)] border border-[var(--border)]">
-      <div className="mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-[var(--border)] pb-5">
+      <div className="max-w-7xl mx-auto">
+         <div className="mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-[var(--border)] pb-5">
         <div>
           <span className="text-xs sm:text-sm font-bold text-[var(--primary)] uppercase tracking-wider">
             ভিডিও গ্যালারি
@@ -108,7 +104,7 @@ export const VideoNewsSection = () => {
                 className="object-cover opacity-85 group-hover:scale-105 transition-transform duration-700 ease-out"
                 priority={video.id <= 2}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent" />
 
               <div className="absolute top-4 inset-x-4 flex items-center justify-between z-10">
                 <span className="bg-[var(--primary)] text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
@@ -160,7 +156,6 @@ export const VideoNewsSection = () => {
             onClick={() => setSelectedVideo(null)}
           />
 
-          {/* max-w-2xl পরিবর্তন করে max-w-5xl করা হয়েছে */}
           <div className="relative w-full max-w-5xl bg-[var(--surface)] border border-[var(--border)] rounded-2xl overflow-hidden shadow-2xl z-10 flex flex-col my-auto max-h-[90vh]">
             <div className="p-4 sm:p-5 border-b border-[var(--border)] flex items-center justify-between bg-[var(--surface-2)]">
               <div>
@@ -202,6 +197,7 @@ export const VideoNewsSection = () => {
           </div>
         </div>
       )}
-    </section>
+      </div>
+    </section>      
   );
 };

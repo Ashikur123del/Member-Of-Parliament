@@ -5,7 +5,6 @@ import Image from "next/image";
 import { FiCalendar, FiClock, FiArrowUpRight } from "react-icons/fi";
 import { NewsItem } from "@/data/newsData";
 
-
 interface NewsCardProps {
   item: NewsItem;
 }
@@ -13,7 +12,6 @@ interface NewsCardProps {
 export const NewsCard: React.FC<NewsCardProps> = ({ item }) => {
   return (
     <div className="flex flex-col h-full rounded-2xl bg-[var(--surface)] border border-[var(--border)] hover:border-[var(--primary)]/40 transition-all duration-300 hover:shadow-lg overflow-hidden group">
-      {/* Unsplash Image */}
       <div className="relative w-full h-52 sm:h-60 bg-[var(--surface-2)] overflow-hidden">
         <Image
           src={item.image}
@@ -27,7 +25,6 @@ export const NewsCard: React.FC<NewsCardProps> = ({ item }) => {
         </span>
       </div>
 
-      {/* Text Details */}
       <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
         <div className="space-y-2.5">
           <div className="flex items-center justify-between text-xs text-[var(--muted)]">

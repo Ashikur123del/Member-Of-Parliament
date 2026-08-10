@@ -1,3 +1,5 @@
+import R1 from '@/assets/r-1.webp'
+
 export interface NewsItem {
   id: string;
   title: string;
@@ -6,7 +8,7 @@ export interface NewsItem {
   readTime: string;
   summary: string;
   content: string;
-  image: string;
+  image: string | typeof R1;
   isFeatured?: boolean;
 }
 
@@ -16,11 +18,11 @@ export const sampleNews: NewsItem[] = [
     title: "আশুলিয়া বাইপাস সড়ক সম্প্রসারণ ও আধুনিকায়নের কাজ দ্রুত গতিতে এগিয়ে চলছে",
     category: "উন্নয়ন",
     date: "০৫ আগস্ট, ২০২৬",
-    readTime: "৪ মিনিট পড়া",
+    readTime: "8 মিনিট পড়া",
     isFeatured: true,
     summary: "যানজট নিরসন এবং শিল্পাঞ্চলের যোগাযোগ ব্যবস্থা সুগম করতে বাইপাস সড়কের ফোর-লেন আধুনিকায়ন প্রকল্পের দ্বিতীয় ধাপের কাজ শুরু হয়েছে।",
     content: "আশুলিয়া ও সংলগ্ন শিল্পাঞ্চলের দীর্ঘদিনের যানজট সমস্যা নিরসনে সাভার-আশুলিয়া ফ্লাইওভার ও সংযোগ সড়ক সম্প্রসারণ প্রকল্পের অগ্রগতি ত্বরান্বিত করা হয়েছে। স্থানীয় প্রশাসন ও সড়ক ও জনপথ বিভাগের যৌথ উদ্যোগে ড্রেনেজ ব্যবস্থা উন্নতকরণ ও ফুটপাত নির্মাণের কাজ চলমান। প্রকল্প পরিচালকের মতে, নির্ধারিত সময়ের আগেই কাজ সম্পন্ন করে সাধারণ মানুষের যাতায়াত নির্বিঘ্ন করা হবে।",
-    image: "https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?q=80&w=1200&auto=format&fit=crop"
+    image: R1,
   },
   {
     id: "2",
