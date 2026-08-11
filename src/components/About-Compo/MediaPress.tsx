@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { IconType } from "react-icons";
@@ -26,7 +26,7 @@ export interface PressRelease {
   category: string;
   icon: IconType;
   thumbnail: string;
-  videoUrl: string; // YouTube Embed URL অথবা mp4 লিঙ্ক
+  videoUrl: string; 
 }
 
 const defaultPressData: PressRelease[] = [
@@ -42,7 +42,7 @@ const defaultPressData: PressRelease[] = [
     icon: FiBriefcase,
     thumbnail:
       "https://images.unsplash.com/photo-1577495508048-b635879837f1?q=80&w=800&auto=format&fit=crop",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // আপনার ভিডিও লিঙ্ক বসান
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
   },
   {
     id: "2",
@@ -82,7 +82,6 @@ export default function MediaPress() {
 
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
-      {/* 1. Header Section */}
       <div className="text-center max-w-2xl mx-auto space-y-3">
         <span className="inline-flex items-center gap-2 text-xs font-bold text-[var(--primary)] uppercase tracking-widest px-4 py-1.5 rounded-full bg-[var(--primary-light)] border border-[var(--primary)]/20 shadow-sm">
           <FiRadio className="text-sm animate-pulse" />
@@ -95,8 +94,6 @@ export default function MediaPress() {
           বিভিন্ন জাতীয় ও আন্তর্জাতিক গণমাধ্যমে সাভার-আশুলিয়ার উন্নয়ন ও সামাজিক কার্যক্রমের সংবাদ ও ভিডিওসমূহ।
         </p>
       </div>
-
-      {/* 2. Press Releases Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {defaultPressData.map((item) => {
           return (
@@ -104,14 +101,12 @@ export default function MediaPress() {
               key={item.id}
               className="group relative flex flex-col justify-between rounded-2xl bg-[var(--surface-2)] border border-[var(--border)] hover:border-[var(--primary)] shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
             >
-              {/* Thumbnail Container with Play Hover Effect */}
               <div
                 onClick={() =>
                   setSelectedVideo({ url: item.videoUrl, title: item.title })
                 }
                 className="relative w-full h-48 bg-slate-900 overflow-hidden cursor-pointer group/thumb"
               >
-                {/* Background Image */}
                 <Image
                   src={item.thumbnail}
                   alt={item.title}
@@ -119,18 +114,12 @@ export default function MediaPress() {
                   className="object-cover group-hover/thumb:scale-110 transition-transform duration-500 opacity-90 group-hover/thumb:opacity-75"
                 />
 
-                {/* Dark Overlay on Hover */}
                 <div className="absolute inset-0 bg-black/30 group-hover/thumb:bg-black/50 transition-colors duration-300" />
-
-                {/* Category Badge */}
                 <span className="absolute top-3 left-3 z-10 text-xs font-semibold text-white bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/20 shadow-sm">
                   {item.category}
                 </span>
-
-                {/* Video Play Button (Pops up on hover) */}
                 <div className="absolute inset-0 flex items-center justify-center z-10">
                   <div className="relative flex items-center justify-center">
-                    {/* Pulsing ring on hover */}
                     <span className="absolute w-16 h-16 bg-[var(--primary)] rounded-full animate-ping opacity-0 group-hover/thumb:opacity-75 transition-opacity" />
                     
                     <button
@@ -142,11 +131,8 @@ export default function MediaPress() {
                   </div>
                 </div>
               </div>
-
-              {/* Card Content */}
               <div className="p-6 space-y-4 flex-1 flex flex-col justify-between">
                 <div className="space-y-3">
-                  {/* Source & Date Meta */}
                   <div className="flex items-center justify-between text-xs text-[var(--muted)]">
                     <span className="font-bold text-[var(--text-2)]">
                       {item.source}
@@ -156,8 +142,6 @@ export default function MediaPress() {
                       {item.date}
                     </span>
                   </div>
-
-                  {/* Title */}
                   <h3
                     onClick={() =>
                       setSelectedVideo({ url: item.videoUrl, title: item.title })
@@ -166,14 +150,10 @@ export default function MediaPress() {
                   >
                     {item.title}
                   </h3>
-
-                  {/* Snippet */}
                   <p className="text-xs sm:text-sm text-[var(--text-2)] leading-relaxed line-clamp-3">
                     {item.snippet}
                   </p>
                 </div>
-
-                {/* Read More Link */}
                 <div className="pt-4 border-t border-[var(--border)]/60 flex items-center justify-between">
                   <Link
                     href={item.link}
@@ -199,7 +179,6 @@ export default function MediaPress() {
         })}
       </div>
 
-      {/* 3. Media Kit Callout */}
       <div className="p-6 sm:p-8 rounded-2xl bg-[var(--surface)] border border-[var(--border)] flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
         <div className="space-y-1 text-center sm:text-left">
           <h4 className="text-lg font-bold text-[var(--text)]">

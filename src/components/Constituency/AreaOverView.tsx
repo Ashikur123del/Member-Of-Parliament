@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import { FiBriefcase, FiBookOpen, FiNavigation, FiHeart } from "react-icons/fi";
-import S1 from '@/assets/S-1.jpg'
-import F3 from '@/assets/f3.jpg'
-import S2 from '@/assets/S-2.jpg'
+import S1 from "@/assets/S-1.jpg";
+import F3 from "@/assets/f3.jpg";
+import S2 from "@/assets/S-2.jpg";
 
 export function AreaOverView() {
   const highlights = [
@@ -27,7 +27,7 @@ export function AreaOverView() {
       title: "জাতীয় ঐতিহ্য ও সংযোগ",
       desc: "আমাদের মহান মুক্তিযুদ্ধের শ্রেষ্ঠ স্মারক 'জাতীয় স্মৃতিসৌধ' সাভারে অবস্থিত। এছাড়া সাভার-আশুলিয়া মহাসড়কটি রাজধানীর সাথে উত্তরবঙ্গের বিশাল পরিবহন নেটওয়ার্ককে যুক্ত করেছে, যা জাতীয় যাতায়াত ব্যবস্থার অতীব গুরুত্বপূর্ণ প্রবেশদ্বার।",
       icon: FiNavigation,
-      image:S1,
+      image: S1,
       tag: "ঐতিহ্য ও যাতায়াত",
     },
     {

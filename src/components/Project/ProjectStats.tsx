@@ -12,18 +12,16 @@ export function ProjectStats() {
     { label: "উপকৃত পরিবার", value: "১.৫ লক্ষ+", icon: FiUsers },
   ];
 
-  // Container variants for staggered entrance animation
   const containerVariants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15, // একটি কার্ডের পর আরেকটি কার্ডের আসার সময়
+        staggerChildren: 0.15,
       },
     },
   };
 
-  // Individual Card Variants
   const cardVariants = {
     hidden: { opacity: 0, y: 25 },
     show: {

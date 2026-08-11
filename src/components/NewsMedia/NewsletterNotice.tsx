@@ -15,7 +15,6 @@ export const NewsletterNotice = () => {
   return (
     <section className="mt-16 p-6 sm:p-10 rounded-3xl bg-[var(--surface-2)] border border-[var(--border)] relative overflow-hidden">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-        {/* Urgent Notice Side */}
         <div className="space-y-3 border-b lg:border-b-0 lg:border-r border-[var(--border)] pb-6 lg:pb-0 lg:pr-8">
           <div className="flex items-center gap-2 text-amber-600 font-bold text-sm">
             <FiBell className="text-lg animate-bounce" />
@@ -28,8 +27,6 @@ export const NewsletterNotice = () => {
             সাভার ও আশুলিয়া এলাকার যেকোনো অবকাঠামোগত সমস্যা, ডাইভারশন বা জরুরি সহায়তার জন্য সরাসরি আমাদের সাপোর্ট টিমের সাথে যোগাযোগ করতে পারেন।
           </p>
         </div>
-
-        {/* Subscription Side */}
         <div className="space-y-4">
           <h3 className="text-lg sm:text-xl font-bold text-[var(--text)]">
             ইমেইলে সরাসরি নোটিফিকেশন পান

@@ -1,13 +1,26 @@
 "use client";
 
-import { FiPhoneCall, FiShield, FiPlusCircle, FiAlertCircle } from "react-icons/fi";
+import {
+  FiPhoneCall,
+  FiShield,
+  FiPlusCircle,
+  FiAlertCircle,
+} from "react-icons/fi";
 
 export function EmergencyHelpline() {
   const contacts = [
     { title: "সাভার মডেল থানা", number: "01320-000000", icon: FiShield },
     { title: "আশুলিয়া থানা", number: "01320-111111", icon: FiShield },
-    { title: "সাভার ফায়ার সার্ভিস", number: "01711-222222", icon: FiAlertCircle },
-    { title: "উপজেলা স্বাস্থ্য কমপ্লেক্স", number: "01811-333333", icon: FiPlusCircle },
+    {
+      title: "সাভার ফায়ার সার্ভিস",
+      number: "01711-222222",
+      icon: FiAlertCircle,
+    },
+    {
+      title: "উপজেলা স্বাস্থ্য কমপ্লেক্স",
+      number: "01811-333333",
+      icon: FiPlusCircle,
+    },
   ];
 
   return (

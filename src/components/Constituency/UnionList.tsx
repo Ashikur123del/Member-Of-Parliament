@@ -71,8 +71,8 @@ export function UnionList(): React.ReactElement {
             <motion.div
               key={idx}
               variants={itemVariants}
-              whileHover={{ 
-                scale: 1.04, 
+              whileHover={{
+                scale: 1.04,
                 y: -4,
                 borderColor: "var(--primary)",
               }}

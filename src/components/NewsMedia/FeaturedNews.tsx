@@ -5,7 +5,6 @@ import Image from "next/image";
 import { FiCalendar, FiClock, FiArrowRight } from "react-icons/fi";
 import { NewsItem } from "@/data/newsData";
 
-
 interface FeaturedNewsProps {
   news: NewsItem;
 }

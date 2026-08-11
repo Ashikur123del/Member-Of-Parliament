@@ -6,7 +6,10 @@ import { motion } from "framer-motion";
 
 const SuggestProject: React.FC = () => {
   return (
-    <section id="suggest-project" className="max-w-7xl mx-auto px-4 sm:px-6 pt-6">
+    <section
+      id="suggest-project"
+      className="max-w-7xl mx-auto px-4 sm:px-6 pt-6"
+    >
       <motion.div
         initial={{ opacity: 0, y: 35 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -28,7 +31,9 @@ const SuggestProject: React.FC = () => {
             নতুন প্রকল্পের প্রস্তাবনা দিন
           </h2>
           <p className="text-xs font-bold sm:text-sm text-[var(--text-2)] leading-relaxed">
-            আপনার এলাকায় কোনো রাস্তা, ড্রেনেজ বা সামাজিক উন্নয়নের প্রয়োজন থাকলে আমাদের জানান। আপনার প্রস্তাবনাটি গুরুত্বসহকারে বিবেচনা করা হবে।
+            আপনার এলাকায় কোনো রাস্তা, ড্রেনেজ বা সামাজিক উন্নয়নের প্রয়োজন
+            থাকলে আমাদের জানান। আপনার প্রস্তাবনাটি গুরুত্বসহকারে বিবেচনা করা
+            হবে।
           </p>
         </motion.div>
 
@@ -42,7 +47,9 @@ const SuggestProject: React.FC = () => {
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-1">
-              <label className="text-xs font-bold text-[var(--text)]">আপনার নাম</label>
+              <label className="text-xs font-bold text-[var(--text)]">
+                আপনার নাম
+              </label>
               <input
                 type="text"
                 placeholder="আপনার পুরো নাম লিখুন"
@@ -50,7 +57,9 @@ const SuggestProject: React.FC = () => {
               />
             </div>
             <div className="space-y-1">
-              <label className="text-xs font-bold text-[var(--text)]">মোবাইল নম্বর</label>
+              <label className="text-xs font-bold text-[var(--text)]">
+                মোবাইল নম্বর
+              </label>
               <input
                 type="tel"
                 placeholder="০১৭xxxxxxxx"
@@ -60,7 +69,9 @@ const SuggestProject: React.FC = () => {
           </div>
 
           <div className="space-y-1">
-            <label className="text-xs font-bold text-[var(--text)]">এলাকা/লোকেশন</label>
+            <label className="text-xs font-bold text-[var(--text)]">
+              এলাকা/লোকেশন
+            </label>
             <input
               type="text"
               placeholder="যেমন: বাইপাইন, আশুলিয়া"
@@ -69,7 +80,9 @@ const SuggestProject: React.FC = () => {
           </div>
 
           <div className="space-y-1">
-            <label className="text-xs font-bold text-[var(--text)]">প্রস্তাবিত প্রকল্পের বিবরণ</label>
+            <label className="text-xs font-bold text-[var(--text)]">
+              প্রস্তাবিত প্রকল্পের বিবরণ
+            </label>
             <textarea
               rows={4}
               placeholder="সমস্যা এবং আপনার প্রস্তাবটি বিস্তারিত লিখুন..."

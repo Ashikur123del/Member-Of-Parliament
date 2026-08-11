@@ -19,8 +19,7 @@ export default function ThemeToggle() {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
+        dropdownRef.current && !dropdownRef.current.contains(event.target as Node)
       ) {
         setIsOpen(false);
       }

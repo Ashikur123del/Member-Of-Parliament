@@ -1,6 +1,5 @@
 import { FiAward, FiArrowRight } from "react-icons/fi";
 
-
 import EducationWork from "@/components/About-Compo/EducationWork";
 import { VisionMission } from "@/components/About-Compo/VisionMission";
 import MediaPress from "@/components/About-Compo/MediaPress";
@@ -27,7 +26,12 @@ export default function AboutPage() {
             { label: "লক্ষ্য", value: "স্মার্ট সাভার" },
           ]}
           actions={[
-            { label: "যোগাযোগ করুন", href: "/contact", variant: "primary", icon: FiArrowRight },
+            {
+              label: "যোগাযোগ করুন",
+              href: "/contact",
+              variant: "primary",
+              icon: FiArrowRight,
+            },
             { label: "চলমান প্রকল্প", href: "/projects", variant: "outline" },
           ]}
         />

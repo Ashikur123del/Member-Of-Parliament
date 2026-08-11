@@ -5,7 +5,6 @@ import Image, { StaticImageData } from "next/image";
 import { FiMapPin, FiCalendar } from "react-icons/fi";
 import { motion } from "framer-motion";
 
-// Type definitions
 export type ProjectStatus = "ongoing" | "completed" | "proposed";
 
 export interface ProjectItem {
@@ -51,7 +50,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       whileHover={{ y: -6 }}
       className="w-full flex flex-col md:flex-row rounded-xl bg-[var(--surface-2)] border border-[var(--border)] hover:border-[var(--primary)]/40 transition-all duration-300 hover:shadow-xl overflow-hidden group"
     >
-
       <div className="relative w-full md:w-1/2 shrink-0 min-h-[280px] sm:min-h-[340px] md:min-h-[380px] bg-[var(--surface)] overflow-hidden">
         <Image
           src={project.image}
@@ -73,7 +71,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         <div className="space-y-3">
           <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm text-[var(--muted)] font-medium">
             <span className="flex items-center gap-1.5">
-              <FiMapPin className="text-[var(--primary)] text-sm sm:text-base" /> {project.location}
+              <FiMapPin className="text-[var(--primary)] text-sm sm:text-base" />{" "}
+              {project.location}
             </span>
             <span>•</span>
             <span className="flex items-center gap-1.5">

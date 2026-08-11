@@ -29,7 +29,8 @@ export const NewsHero: React.FC<NewsHeroProps> = ({
             সংবাদ ও আপডেট
           </h1>
           <p className="text-sm sm:text-base text-[var(--text-2)] leading-relaxed">
-            সাভার ও আশুলিয়া এলাকার উন্নয়নমূলক কার্যক্রম, ঘোষণা, নোটিশ এবং সর্বশেষ নাগরিক খবরাখবর একনজরে জেনে নিন।
+            সাভার ও আশুলিয়া এলাকার উন্নয়নমূলক কার্যক্রম, ঘোষণা, নোটিশ এবং
+            সর্বশেষ নাগরিক খবরাখবর একনজরে জেনে নিন।
           </p>
 
           <div className="pt-4 max-w-xl mx-auto">

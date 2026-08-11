@@ -16,10 +16,8 @@ import {
   FiCheckCircle,
 } from "react-icons/fi";
 
-// প্রতিটি সেকশনের জন্য আলাদা আলাদা ইউনিক ইমেজ ইমপোর্ট
 import f1 from "@/assets/f1.jpg";
-import f2 from "@/assets/f2.jpg";
-import f4 from "@/assets/f4.jpg"; 
+import f4 from "@/assets/f4.jpg";
 import f5 from "@/assets/f5.jpg";
 
 export interface PhotoItem {
@@ -103,10 +101,9 @@ export interface EducationWorkProps {
   politicalPhotos?: PhotoItem[];
 }
 
-/* ================= 1. Personal Life Component ================= */
 export function PersonalLife({
   title = "ব্যক্তিগত জীবন",
-  image = f4, // ইউনিক পিকচার (Personal Life)
+  image = f4,
   paragraphs = [
     "ডা. দেওয়ান মোহাম্মদ সালাউদ্দিন এক সম্ভ্রান্ত ও ঐতিহ্যবাহী পরিবারে জন্মগ্রহণ করেন। ছোটবেলা থেকেই তিনি সাধারণ মানুষের সুখ-দুঃখ এবং সামাজিক কর্মকাণ্ডে নিবিড়ভাবে যুক্ত ছিলেন। চিকিৎসা সেবার পাশাপাশি সমাজসেবামূলক কাজে তাঁর আত্মনিয়োগ প্রশংসনীয়।",
     "ব্যক্তিগত জীবনে তিনি অত্যন্ত সৎ, বিনয়ী ও সাদাসিধে জীবনযাপনে বিশ্বাসী। পরিবারের পাশাপাশি সাভার ও আশুলিয়া অঞ্চলের সাধারণ মানুষকেই তিনি নিজের পরিবার বলে মনে করেন।",
@@ -183,10 +180,9 @@ export function PersonalLife({
   );
 }
 
-/* ================= 2. Education Life Component ================= */
 export function EducationLife({
   title = "শিক্ষাজীবন",
-  heroImage = f1, // ইউনিক পিকচার (Education Life)
+  heroImage = f1,
   paragraphs = [],
   education = [],
   galleryTitle = "শিক্ষাজীবনের ছবি",
@@ -247,7 +243,9 @@ export function EducationLife({
                   <FiMapPin /> {item.institution}
                 </span>
               </div>
-              <h3 className="font-bold text-base pl-2 text-[var(--text)]">{item.degree}</h3>
+              <h3 className="font-bold text-base pl-2 text-[var(--text)]">
+                {item.degree}
+              </h3>
               {item.desc && (
                 <p className="text-xs text-[var(--text-2)] leading-relaxed pl-2 pt-1 border-t border-[var(--border)]/60">
                   {item.desc}
@@ -296,10 +294,9 @@ export function EducationLife({
   );
 }
 
-/* ================= 3. Political Life Component ================= */
 export function PoliticalLife({
   title = "রাজনৈতিক জীবন",
-  heroImage = f5, // ইউনিক পিকচার (Political Life)
+  heroImage = f5,
   paragraphs = [
     "ডা. দেওয়ান মোহাম্মদ সালাউদ্দিন দীর্ঘ সময় ধরে সাভার ও আশুলিয়ার জনগণের সেবায় নিজেকে উৎসর্গ করেছেন। ছাত্রজীবন থেকেই তিনি স্বৈরাচারবিরোধী আন্দোলন ও সাধারণ মানুষের গণতান্ত্রিক অধিকার আদায়ের সংগ্রামে সক্রিয় ভূমিকা পালন করেন।",
     "একজন চিকিৎসক হিসেবে রাজনীতিকে তিনি জনসেবার অন্যতম মাধ্যম হিসেবে গ্রহণ করেন। সংসদ সদস্য হিসেবে দায়িত্ব পালনকালে তিনি এলাকার সড়ক যোগাযোগ, শিক্ষাপ্রতিষ্ঠানের উন্নয়ন, চিকিৎসা ব্যবস্থার আধুনিকায়ন এবং নদী দূষণ প্রতিরোধে নানামুখী পদক্ষেপ গ্রহণ করেন।",
@@ -390,7 +387,9 @@ export function PoliticalLife({
                     {item.organization}
                   </span>
                 </div>
-                <h4 className="font-bold text-base pl-2 pt-1 text-[var(--text)]">{item.title}</h4>
+                <h4 className="font-bold text-base pl-2 pt-1 text-[var(--text)]">
+                  {item.title}
+                </h4>
                 {item.desc && (
                   <p className="text-xs text-[var(--text-2)] leading-relaxed pl-2 pt-1 border-t border-[var(--border)]/60">
                     {item.desc}
@@ -405,7 +404,8 @@ export function PoliticalLife({
       {achievements.length > 0 && (
         <div className="p-6 sm:p-8 rounded-3xl bg-[var(--surface-2)] border border-[var(--border)] space-y-4 shadow-sm">
           <h3 className="text-xl font-bold flex items-center gap-2 text-[var(--text)]">
-            <FiCheckCircle className="text-[var(--primary)] text-2xl" /> প্রধান প্রধান উন্নয়ন ও রাজনৈতিক অর্জনসমূহ
+            <FiCheckCircle className="text-[var(--primary)] text-2xl" /> প্রধান
+            প্রধান উন্নয়ন ও রাজনৈতিক অর্জনসমূহ
           </h3>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">
             {achievements.map((item, idx) => (
@@ -465,7 +465,6 @@ const tabs: SidebarTabItem[] = [
   { id: "political-section", label: "রাজনৈতিক জীবন", icon: FiFlag },
 ];
 
-/* ================= Main Container Component ================= */
 export default function EducationWork({
   personalHeroImage,
   educationHeroImage,
@@ -484,7 +483,8 @@ export default function EducationWork({
   politicalGalleryTitle,
   politicalPhotos,
 }: EducationWorkProps) {
-  const [activeSection, setActiveSection] = useState<string>("personal-section");
+  const [activeSection, setActiveSection] =
+    useState<string>("personal-section");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -498,7 +498,7 @@ export default function EducationWork({
       {
         rootMargin: "-20% 0px -60% 0px",
         threshold: 0,
-      }
+      },
     );
 
     tabs.forEach((tab) => {
@@ -524,7 +524,6 @@ export default function EducationWork({
     <div className="py-10 md:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Sidebar Tabs */}
           <aside className="lg:col-span-3 lg:sticky lg:top-24 space-y-1.5 bg-[var(--surface-2)] p-3 rounded-2xl border border-[var(--border)] shadow-sm">
             {tabs.map((tab) => {
               const Icon = tab.icon;
@@ -541,14 +540,15 @@ export default function EducationWork({
                       : "text-[var(--text-2)] hover:bg-[var(--primary-light)] hover:text-[var(--primary)]"
                   }`}
                 >
-                  <Icon className={`text-base shrink-0 ${isActive ? "text-white" : ""}`} />
+                  <Icon
+                    className={`text-base shrink-0 ${isActive ? "text-white" : ""}`}
+                  />
                   <span>{tab.label}</span>
                 </button>
               );
             })}
           </aside>
 
-          {/* Content Area */}
           <main className="lg:col-span-9 space-y-16">
             <section id="personal-section" className="scroll-mt-24">
               <PersonalLife

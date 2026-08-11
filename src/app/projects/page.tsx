@@ -1,5 +1,3 @@
-
-
 import HeroBio from "@/components/About-Compo/HeroBio";
 import { ProjectStats } from "@/components/Project/ProjectStats";
 import ProjectCard, { ProjectItem } from "@/components/Project/ProjectCard";
@@ -78,7 +76,10 @@ export default function ProjectsPage() {
 
       <ProjectStats />
 
-      <section id="projects-grid" className="max-w-7xl mx-auto px-4 sm:px-6 pt-6">
+      <section
+        id="projects-grid"
+        className="max-w-7xl mx-auto px-4 sm:px-6 pt-6"
+      >
         <div className="flex flex-col gap-8 w-full">
           {projectsData.map((project) => (
             <ProjectCard key={project.id} project={project} />

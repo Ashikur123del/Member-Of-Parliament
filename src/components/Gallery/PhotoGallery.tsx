@@ -38,7 +38,8 @@ const photoData: PhotoItem[] = [
   },
   {
     id: 2,
-    title: "আশুলিয়া হাইস্কুল মাঠে বার্ষিক ক্রীড়া প্রতিযোগিতা ও পুরস্কার বিতরণ",
+    title:
+      "আশুলিয়া হাইস্কুল মাঠে বার্ষিক ক্রীড়া প্রতিযোগিতা ও পুরস্কার বিতরণ",
     category: "events",
     date: "০১ আগস্ট, ২০২৬",
     image: G2,
@@ -100,18 +101,18 @@ export const PhotoGallery = () => {
   const handlePrev = useCallback(() => {
     if (selectedIndex === null) return;
     setSelectedIndex((prev) =>
-      prev !== null && prev > 0 ? prev - 1 : filteredPhotos.length - 1
+      prev !== null && prev > 0 ? prev - 1 : filteredPhotos.length - 1,
     );
   }, [selectedIndex, filteredPhotos.length]);
 
   const handleNext = useCallback(() => {
     if (selectedIndex === null) return;
     setSelectedIndex((prev) =>
-      prev !== null && prev < filteredPhotos.length - 1 ? prev + 1 : 0
+      prev !== null && prev < filteredPhotos.length - 1 ? prev + 1 : 0,
     );
   }, [selectedIndex, filteredPhotos.length]);
 
-  useEffect(() => { 
+  useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (selectedIndex === null) return;
       if (e.key === "ArrowLeft") handlePrev();
@@ -165,12 +166,15 @@ export const PhotoGallery = () => {
                       : "bg-[var(--surface-2)] text-[var(--text-2)] hover:bg-[var(--surface)] border border-[var(--border)]"
                   }`}
                 >
-
                   {isActive && (
                     <motion.div
                       layoutId="activeTab"
                       className="absolute inset-0 bg-[var(--primary)] rounded-xl shadow-lg shadow-[var(--primary)]/20 z-0"
-                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 30,
+                      }}
                     />
                   )}
                   <span className="relative z-10">{cat.label}</span>
@@ -240,7 +244,7 @@ export const PhotoGallery = () => {
               </motion.div>
             ))}
           </AnimatePresence>
-        </motion.div> 
+        </motion.div>
 
         <AnimatePresence>
           {currentPhoto && selectedIndex !== null && (
@@ -320,7 +324,7 @@ export const PhotoGallery = () => {
                     <span className="px-2.5 py-0.5 rounded-full bg-[var(--primary)] text-white font-bold">
                       {selectedIndex + 1} / {filteredPhotos.length}
                     </span>
-                    <span>•  </span>
+                    <span>• </span>
                     <span>{currentPhoto.date}</span>
                   </div>
                   <h3 className="text-base sm:text-xl font-bold text-white leading-relaxed">

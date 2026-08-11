@@ -2,13 +2,12 @@
 
 import HeroBio from "@/components/About-Compo/HeroBio";
 import { FiMapPin, FiArrowRight, FiPhoneCall } from "react-icons/fi";
-import ConstituencyImg from "@/assets/img-6.jpg"; 
+import ConstituencyImg from "@/assets/img-6.jpg";
 import { AreaOverView } from "@/components/Constituency/AreaOverView";
 import { UnionList } from "@/components/Constituency/UnionList";
 import { DevelopmentFocus } from "@/components/Constituency/DevelopmentFocus";
 import { EmergencyHelpline } from "@/components/Constituency/EmergencyHelpline";
 import { AreaProblemForm } from "@/components/Constituency/AreaProblemForm";
-
 
 const ConstituencyPage = () => {
   return (
@@ -27,27 +26,26 @@ const ConstituencyPage = () => {
           { label: "প্রধান লক্ষ্য", value: "স্মার্ট সাভার" },
         ]}
         actions={[
-          { 
-            label: "সমস্যা জানান", 
-            href: "#problem-form", 
-            variant: "primary", 
-            icon: FiArrowRight 
+          {
+            label: "সমস্যা জানান",
+            href: "#problem-form",
+            variant: "primary",
+            icon: FiArrowRight,
           },
-          { 
-            label: "জরুরি হেল্পলাইন", 
-            href: "#helpline", 
-            variant: "outline", 
-            icon: FiPhoneCall 
+          {
+            label: "জরুরি হেল্পলাইন",
+            href: "#helpline",
+            variant: "outline",
+            icon: FiPhoneCall,
           },
         ]}
       />
 
-   
       <AreaOverView />
       <UnionList />
       <DevelopmentFocus />
       <EmergencyHelpline />
-      <AreaProblemForm /> 
+      <AreaProblemForm />
     </main>
   );
 };
