@@ -70,7 +70,7 @@ export default function NavbarClient({ navLinks }: NavbarClientProps) {
         <ThemeToggle />
 
         <Link
-          href="/help/request"
+          href="/complain"
           className={`btn-outline text-xs xl:text-sm font-medium px-3 py-2 flex items-center gap-1.5 transition-all whitespace-nowrap rounded-lg border border-[var(--border)] hover:border-[var(--primary)] ${
             isActive("/help/request")
               ? "bg-[var(--surface-2)] border-[var(--primary)] text-[var(--primary)] font-bold"
@@ -133,7 +133,7 @@ export default function NavbarClient({ navLinks }: NavbarClientProps) {
 
               <div className="pt-4 mt-4 border-t border-[var(--border)] flex flex-col gap-2.5">
                 <Link
-                  href="/help/request"
+                  href="/complain"
                   onClick={() => setIsOpen(false)}
                   className="w-full py-3 px-4 rounded-xl border border-[var(--border)] text-center text-sm font-semibold flex items-center justify-center gap-2 text-[var(--text)] hover:border-[var(--primary)] bg-[var(--surface-2)]"
                 >

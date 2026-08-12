@@ -117,14 +117,14 @@ export default function HeroSection() {
               className="flex flex-wrap items-center gap-3 pt-2"
             >
               <Link
-                href="/help/request"
+                href="/complain"
                 className="btn-primary gap-2 shadow-md hover:scale-[1.02] transition-transform"
               >
                 <FiMessageSquare className="text-lg" />
                 <span>অভিযোগ বা আবেদন দিন</span>
               </Link>
               <Link
-                href="/work/projects"
+                href="/projects"
                 className="btn-outline gap-2 hover:scale-[1.02] transition-transform"
               >
                 <FiBriefcase className="text-lg" />

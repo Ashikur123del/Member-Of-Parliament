@@ -1,8 +1,8 @@
 "use client";
 
 import HeroBio from "@/components/About-Compo/HeroBio";
-// import { ContactInfo } from "@/components/Contact/ContactInfo";
-// import { ContactForm } from "@/components/Contact/ContactForm"; 
+import { ContactInfo } from "@/components/Contact/ContactInfo";
+import { ContactForm } from "@/components/Contact/ContactForm"; 
 
 import { FiPhoneCall, FiArrowRight } from "react-icons/fi";
 import C1 from '@/assets/C-1.jpg'
@@ -27,7 +27,7 @@ export default function ContactPage() {
           { label: "অভিযোগ জমা", href: "/complain", variant: "outline" },
         ]}
       />
-{/* 
+
       <div className="max-w-7xl mx-auto my-5 md:my-15">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 items-stretch">
         <div className="lg:col-span-6">
@@ -37,7 +37,7 @@ export default function ContactPage() {
           <ContactForm />
         </div>
       </div>
-      </div> */}
+      </div>
     </main>
   );
 }

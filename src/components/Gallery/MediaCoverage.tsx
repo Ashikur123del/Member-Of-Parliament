@@ -92,6 +92,24 @@ export const MediaCoverage = () => {
             </Link>
           ))}
         </div>
+
+         <div className="mt-10 p-6 rounded-2xl bg-[var(--surface)] border border-[var(--border)] flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+          <div>
+            <h4 className="text-base font-bold">
+              আপনার এলাকার কোনো সমস্যা জানাতে চান?
+            </h4>
+            <p className="text-xs text-[var(--text-2)]">
+              নাগরিক সেবা ডেস্কে সরাসরি আপনার এলাকার কোনো অভিযোগ বা প্রস্তাবনা
+              পেশ করুন।
+            </p>
+          </div>
+          <Link
+            href="/complain"
+            className="btn-primary text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-xl shrink-0"
+          >
+            অভিযোগ জমা দিন
+          </Link>
+        </div>
       </div>
     </section>
   );

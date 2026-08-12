@@ -258,7 +258,7 @@ export default function ConstituencyOverviewSection() {
 
         <div className="text-center pt-6">
           <Link
-            href="/constituency/overview"
+            href="/constituency"
             className="btn-primary inline-flex items-center gap-2 text-sm sm:text-base font-semibold px-6 py-3 rounded-xl shadow-md transition-all"
           >
             <span>সম্পূর্ণ এলাকা, ওয়ার্ড তালিকা ও বিস্তারিত ম্যাপ দেখুন</span>

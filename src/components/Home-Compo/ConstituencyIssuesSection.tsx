@@ -108,7 +108,7 @@ export default function ConstituencyIssuesSection() {
           </div>
 
           <Link
-            href="/constituency/issues"
+            href="/constituency"
             className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--primary)] hover:underline shrink-0"
           >
             <span>সবগুলো সমস্যার ট্র্যাকার দেখুন</span>
@@ -230,7 +230,7 @@ export default function ConstituencyIssuesSection() {
             </p>
           </div>
           <Link
-            href="/help/request"
+            href="/complain"
             className="btn-primary text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-xl shrink-0"
           >
             অভিযোগ জমা দিন
