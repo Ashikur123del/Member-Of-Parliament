@@ -2,7 +2,15 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { FiUser, FiMail, FiLock, FiPhone, FiCheckCircle } from "react-icons/fi";
+import {
+  FiUser,
+  FiMail,
+  FiLock,
+  FiPhone,
+  FiCheckCircle,
+  FiEye,
+  FiEyeOff,
+} from "react-icons/fi";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -13,6 +21,7 @@ const RegisterPage = () => {
     email: "",
     password: "",
   });
+  const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -20,11 +29,18 @@ const RegisterPage = () => {
     setLoading(true);
 
     setTimeout(() => {
-      if (formData.name && formData.phone && formData.email && formData.password) {
-        toast.success("অ্যাকাউন্ট সফলভাবে তৈরি হয়েছে!", { theme: "colored" });
+      if (
+        formData.name &&
+        formData.phone &&
+        formData.email &&
+        formData.password
+      ) {
+        toast.success("অ্যাকাউন্ট সফলভাবে তৈরি হয়েছে!", { theme: "colored" });
         console.log("Register Data:", formData);
       } else {
-        toast.error("অনুগ্রহ করে সব তথ্য সঠিক উপায়ে পূরণ করুন", { theme: "colored" });
+        toast.error("অনুগ্রহ করে সব তথ্য সঠিক উপায়ে পূরণ করুন", {
+          theme: "colored",
+        });
       }
       setLoading(false);
     }, 1000);
@@ -44,7 +60,7 @@ const RegisterPage = () => {
             অ্যাকাউন্ট তৈরি করুন
           </h2>
           <p className="text-xs sm:text-sm text-[var(--text-2)]">
-            পোর্টালে যুক্ত হয়ে আপনার মতামত ও প্রস্তাবনা জানান
+            পোর্টালে যুক্ত হয়ে আপনার মতামত ও প্রস্তাবনা জানান
           </p>
         </div>
 
@@ -59,7 +75,9 @@ const RegisterPage = () => {
                 type="text"
                 required
                 value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
                 placeholder="আপনার নাম লিখুন"
                 className="w-full pl-10 pr-4 py-3 rounded-xl bg-[var(--surface-2)] border border-[var(--border)] focus:border-[var(--primary)] text-sm outline-none text-[var(--text)] transition-all"
               />
@@ -76,7 +94,9 @@ const RegisterPage = () => {
                 type="tel"
                 required
                 value={formData.phone}
-                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, phone: e.target.value })
+                }
                 placeholder="১১ ডিজিটের মোবাইল নম্বর"
                 className="w-full pl-10 pr-4 py-3 rounded-xl bg-[var(--surface-2)] border border-[var(--border)] focus:border-[var(--primary)] text-sm outline-none text-[var(--text)] transition-all"
               />
@@ -93,7 +113,9 @@ const RegisterPage = () => {
                 type="email"
                 required
                 value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
                 placeholder="আপনার ইমেইল লিখুন"
                 className="w-full pl-10 pr-4 py-3 rounded-xl bg-[var(--surface-2)] border border-[var(--border)] focus:border-[var(--primary)] text-sm outline-none text-[var(--text)] transition-all"
               />
@@ -102,18 +124,30 @@ const RegisterPage = () => {
 
           <div className="space-y-1">
             <label className="text-xs sm:text-sm font-semibold text-[var(--text)]">
-              পাসওয়ার্ড
+              পাসওয়ার্ড
             </label>
             <div className="relative flex items-center">
               <FiLock className="absolute left-3.5 text-[var(--muted)] text-base" />
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 required
                 value={formData.password}
-                onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                placeholder="নতুন পাসওয়ার্ড দিন"
-                className="w-full pl-10 pr-4 py-3 rounded-xl bg-[var(--surface-2)] border border-[var(--border)] focus:border-[var(--primary)] text-sm outline-none text-[var(--text)] transition-all"
+                onChange={(e) =>
+                  setFormData({ ...formData, password: e.target.value })
+                }
+                placeholder="নতুন পাসওয়ার্ড দিন"
+                className="w-full pl-10 pr-12 py-3 rounded-xl bg-[var(--surface-2)] border border-[var(--border)] focus:border-[var(--primary)] text-sm outline-none text-[var(--text)] transition-all"
               />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3.5 text-[var(--muted)] hover:text-[var(--primary)] text-base transition-colors focus:outline-none"
+                aria-label={
+                  showPassword ? "পাসওয়ার্ড লুকান" : "পাসওয়ার্ড দেখুন"
+                }
+              >
+                {showPassword ? <FiEyeOff /> : <FiEye />}
+              </button>
             </div>
           </div>
 

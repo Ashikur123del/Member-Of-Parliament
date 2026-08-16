@@ -16,8 +16,13 @@ const hindSiliguri = Hind_Siliguri({
 });
 
 export const metadata: Metadata = {
-  title: "এমপি পোর্টফোলিও | অফিশিয়াল ওয়েবসাইট",
-  description: "সংসদ সদস্যের অফিশিয়াল ডিজিটাল পোর্টাল ও জনসেবা ডেস্ক",
+  title: "উপজেলা পোর্টফোলিও | অফিশিয়াল ওয়েবসাইট",
+  description: "অফিশিয়াল ডিজিটাল পোর্টাল ও জনসেবা ডেস্ক",
+  icons: {
+    icon: "/assets/icon.png",
+    shortcut: "/assets/icon.png",
+    apple: "/assets/icon.png",
+  },
 };
 
 export default function RootLayout({

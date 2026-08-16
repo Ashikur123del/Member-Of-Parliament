@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import NavbarClient from "./navbar-client";
-import Image5 from "@/assets/LOGO.png";
+import Image5 from "@/assets/icon.png";
 
 const NAV_LINKS = [
   { label: "হোম", href: "/" },
