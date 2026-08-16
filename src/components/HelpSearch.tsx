@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import { FiSearch, FiPhone, FiCheckCircle } from "react-icons/fi";
 
@@ -12,7 +13,6 @@ const emergencyHotlines = [
 export const HelpSearch = ({ onSearch }: { onSearch?: (query: string) => void }) => {
   return (
     <div className="space-y-6">
-      {/* সার্চ বার */}
       <div className="bg-[var(--surface)] border border-[var(--border)] rounded-3xl p-6 sm:p-8 shadow-sm text-center">
         <h3 className="text-xl sm:text-2xl font-bold text-[var(--text)] mb-2">
           আপনার কী সাহায্য প্রয়োজন?
@@ -46,12 +46,12 @@ export const HelpSearch = ({ onSearch }: { onSearch?: (query: string) => void })
               <span className="text-[11px] font-bold text-[var(--muted)] block">
                 {item.label}
               </span>
-              <a
+              <Link
                 href={`tel:${item.number}`}
                 className="text-lg font-black text-[var(--primary)] hover:underline block"
               >
                 {item.number}
-              </a>
+              </Link>
               <p className="text-[11px] text-[var(--text-2)] mt-0.5">{item.desc}</p>
             </div>
           </div>

@@ -36,7 +36,6 @@ export const ComplainForm = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // র্যান্ডম ট্র্যাকিং আইকন জেনারেট
     const randomId = "CMP-" + Math.floor(100000 + Math.random() * 900000);
     setTrackingId(randomId);
     setSubmitted(true);
@@ -86,7 +85,6 @@ export const ComplainForm = () => {
       ) : (
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {/* নাম */}
             <div>
               <label className="block text-xs font-bold text-[var(--text)] mb-1.5">
                 আপনার নাম *
@@ -101,8 +99,6 @@ export const ComplainForm = () => {
                 />
               </div>
             </div>
-
-            {/* মোবাইল নম্বর */}
             <div>
               <label className="block text-xs font-bold text-[var(--text)] mb-1.5">
                 মোবাইল নম্বর *
@@ -120,7 +116,6 @@ export const ComplainForm = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {/* ইমেইল */}
             <div>
               <label className="block text-xs font-bold text-[var(--text)] mb-1.5">
                 ইমেইল (ঐচ্ছিক)
@@ -134,8 +129,6 @@ export const ComplainForm = () => {
                 />
               </div>
             </div>
-
-            {/* অভিযোগের বিষয়/ক্যাটাগরি */}
             <div>
               <label className="block text-xs font-bold text-[var(--text)] mb-1.5">
                 অভিযোগের ধরণ *
@@ -153,8 +146,6 @@ export const ComplainForm = () => {
               </select>
             </div>
           </div>
-
-          {/* এলাকা / ঠিকানা */}
           <div>
             <label className="block text-xs font-bold text-[var(--text)] mb-1.5">
               ঘটনা/সমস্যার স্থান *
@@ -170,7 +161,6 @@ export const ComplainForm = () => {
             </div>
           </div>
 
-          {/* অভিযোগের বিস্তারিত */}
           <div>
             <label className="block text-xs font-bold text-[var(--text)] mb-1.5">
               অভিযোগের বিস্তারিত বিবরণ *
@@ -186,7 +176,6 @@ export const ComplainForm = () => {
             </div>
           </div>
 
-          {/* ফাইল/ছবি আপলোড */}
           <div>
             <label className="block text-xs font-bold text-[var(--text)] mb-1.5">
               প্রমাণ/ছবি সংযুক্তি (ঐচ্ছিক)
@@ -203,15 +192,13 @@ export const ComplainForm = () => {
             </label>
           </div>
 
-          {/* সতর্কতা তথ্য */}
           <div className="flex items-start gap-2 p-3 bg-[var(--primary-light)]/40 rounded-xl text-[11px] text-[var(--text-2)]">
             <FiAlertCircle className="text-base text-[var(--primary)] shrink-0 mt-0.5" />
             <span>
               মিথ্যা বা ভিত্তিহীন অভিযোগ দাখিল করা আইনত দণ্ডনীয়। আপনার প্রদানকৃত তথ্য গোপন রাখা হবে।
             </span>
           </div>
-
-          {/* সাবমিট বাটন */}
+          
           <button
             type="submit"
             className="w-full py-3.5 px-6 rounded-xl bg-[var(--primary)] hover:opacity-90 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all shadow-sm"

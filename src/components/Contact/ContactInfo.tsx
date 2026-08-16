@@ -12,28 +12,29 @@ import {
   FiYoutube,
   FiGlobe,
 } from "react-icons/fi";
+import Link from "next/link";
 
 const contactDetails = [
   {
     id: 1,
     icon: FiMapPin,
     title: "প্রধান কার্যালয়",
-    details: "এমপি সেবা কার্যালয়, সাভার বাজার বাসস্ট্যান্ড সংলগ্ন, সাভার, ঢাকা।",
-    subText: "ঢাকা-১৯ (সাভার ও আশুলিয়া)",
+    details: "দেওয়ান মঈনুদ্দিন বিপ্লব জনসেবা কার্যালয়, সাভার, ঢাকা।",
+    subText: "সাভার ও আশুলিয়া অঞ্চল",
   },
   {
     id: 2,
     icon: FiPhoneCall,
     title: "ফোন ও হেল্পলাইন",
     details: "+৮৮০ ১৭০০-০০০০০",
-    subText: "কল সেন্টার: ০৯৬১১-০০০০০ (সকাল ৯টা - বিকাল ৫টা)",
+    subText: "সহায়তা কেন্দ্র: সকাল ৯টা - বিকাল ৫টা",
   },
   {
     id: 3,
     icon: FiMail,
     title: "ইমেইল করুন",
-    details: "info@mpoffice-savar.gov.bd",
-    subText: "যেকোনো দাপ্তরিক অনুসন্ধানের জন্য",
+    details: "contact@dewanbiplob.com",
+    subText: "যেকোনো জিজ্ঞাসা ও প্রস্তাবনার জন্য",
   },
   {
     id: 4,
@@ -46,8 +47,7 @@ const contactDetails = [
 
 export const ContactInfo = () => {
   return (
-    <div className="">
-        <div className="space-y-6">
+    <div className="space-y-6">
       <div className="bg-[var(--surface)] border border-[var(--border)] rounded-3xl p-6 sm:p-8 shadow-sm">
         <h3 className="text-xl sm:text-2xl font-bold text-[var(--text)] mb-6 pb-4 border-b border-[var(--border)]">
           যোগাযোগের বিবরণ
@@ -92,20 +92,21 @@ export const ContactInfo = () => {
             ].map((social, i) => {
               const SocialIcon = social.icon;
               return (
-                <a
+                <Link
                   key={i}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={social.label}
                   className="w-10 h-10 rounded-xl bg-[var(--surface-2)] border border-[var(--border)] text-[var(--text-2)] hover:text-[var(--primary)] hover:border-[var(--primary)] flex items-center justify-center transition-all shadow-xs"
                 >
                   <SocialIcon className="text-lg" />
-                </a>
+                </Link>
               );
             })}
           </div>
         </div>
       </div>
-    </div>  
-    </div>    
+    </div>
   );
 };

@@ -1,24 +1,40 @@
 "use client";
 
+import Link from "next/link";
 import {
   FiPhoneCall,
   FiShield,
   FiPlusCircle,
   FiAlertCircle,
+  FiRadio,
 } from "react-icons/fi";
 
-export function EmergencyHelpline() {
+export function EmergencyHelpline(): React.ReactElement {
   const contacts = [
-    { title: "সাভার মডেল থানা", number: "01320-000000", icon: FiShield },
-    { title: "আশুলিয়া থানা", number: "01320-111111", icon: FiShield },
+    {
+      title: "জাতীয় জরুরি সেবা",
+      number: "999",
+      icon: FiRadio,
+      tag: "২৪/৭ টোল ফ্রি",
+    },
+    {
+      title: "সাভার মডেল থানা",
+      number: "01320-026852",
+      icon: FiShield,
+    },
+    {
+      title: "আশুলিয়া থানা",
+      number: "01320-026880",
+      icon: FiShield,
+    },
     {
       title: "সাভার ফায়ার সার্ভিস",
-      number: "01711-222222",
+      number: "01730-002241",
       icon: FiAlertCircle,
     },
     {
       title: "উপজেলা স্বাস্থ্য কমপ্লেক্স",
-      number: "01811-333333",
+      number: "01711-200788",
       icon: FiPlusCircle,
     },
   ];
@@ -31,32 +47,39 @@ export function EmergencyHelpline() {
             জরুরি সেবা ও হেল্পলাইন
           </h2>
           <p className="text-xs font-semibold sm:text-sm text-[var(--text-2)]">
-            সাভার ও আশুলিয়া অঞ্চলের গুরুত্বপূর্ণ জরুরি যোগাযোগ নম্বর
+            সাভার ও আশুলিয়া এলাকার নাগরিকদের জন্য জরুরি যোগাযোগ নম্বরসমূহ
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
           {contacts.map((contact, idx) => {
             const Icon = contact.icon;
             return (
               <div
                 key={idx}
-                className="p-5 rounded-xl bg-[var(--surface)] border border-[var(--border)] flex items-center gap-4"
+                className="p-5 rounded-xl bg-[var(--surface)] border border-[var(--border)] flex items-center gap-4 hover:border-[var(--primary)]/40 transition-all duration-300 shadow-sm"
               >
                 <div className="w-10 h-10 rounded-lg bg-[var(--primary-light)] text-[var(--primary)] flex items-center justify-center text-xl shrink-0">
                   <Icon />
                 </div>
-                <div className="overflow-hidden">
-                  <h3 className="text-base font-semibold text-[var(--muted)] truncate">
-                    {contact.title}
-                  </h3>
-                  <a
-                    href={`tel:${contact.number}`}
-                    className="text-sm font-bold text-[var(--text)] hover:text-[var(--primary)] transition-colors flex items-center gap-1.5 mt-0.5"
+                <div className="overflow-hidden flex-1">
+                  <div className="flex items-center justify-between gap-1">
+                    <h3 className="text-sm sm:text-base font-bold text-[var(--text)] truncate">
+                      {contact.title}
+                    </h3>
+                    {contact.tag && (
+                      <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[var(--primary)] text-white">
+                        {contact.tag}
+                      </span>
+                    )}
+                  </div>
+                  <Link
+                    href={`tel:${contact.number.replace(/-/g, "")}`}
+                    className="text-sm font-black text-[var(--primary)] hover:underline flex items-center gap-1.5 mt-1"
                   >
-                    <FiPhoneCall className="text-xs text-[var(--primary)]" />
+                    <FiPhoneCall className="text-xs shrink-0" />
                     <span>{contact.number}</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             );

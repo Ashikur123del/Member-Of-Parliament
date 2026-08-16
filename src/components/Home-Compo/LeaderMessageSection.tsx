@@ -18,7 +18,7 @@ export default function LeaderMessageSection() {
   return (
     <section className="relative py-20 md:py-28 bg-[var(--surface-2)] border-b border-[var(--border)] overflow-hidden">
       <div className="absolute top-1/4 -left-20 w-80 h-80 bg-[var(--primary)]/10 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-10 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px] pointer-events-none" />{" "}
+      <div className="absolute bottom-10 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px] pointer-events-none" />
       <div
         className="absolute inset-0 opacity-[0.03] dark:opacity-[0.07] pointer-events-none"
         style={{
@@ -40,18 +40,17 @@ export default function LeaderMessageSection() {
               <div className="relative rounded-2xl overflow-hidden border border-[var(--border-strong)] bg-[var(--surface)] shadow-2xl aspect-[4/5] group">
                 <Image
                   src={LeaderImg}
-                  alt="মাননীয় সংসদ সদস্য"
+                  alt="সাবেক ভাইস চেয়ারম্যান"
                   fill  
-                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out w-200 h-200 md:w-400 md:h-400"
-
+                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
 
                 <div className="absolute bottom-4 left-4 right-4 text-white">
                   <p className="text-xs uppercase tracking-wider text-blue-200 font-semibold mb-0.5">
-                    ঢাকা-১০ আসন
+                    সাভার উপজেলা পরিষদ
                   </p>
-                  <h3 className="text-lg font-bold">মাননীয় সংসদ সদস্য</h3>
+                  <h3 className="text-lg font-bold">সাবেক ভাইস চেয়ারম্যান</h3>
                 </div>
               </div>
 
@@ -78,7 +77,7 @@ export default function LeaderMessageSection() {
                     জনসেবায় নিবেদিত
                   </h4>
                   <p className="text-xs text-[var(--text-2)] font-medium">
-                    স্মার্ট ও স্বনির্ভর ঢাকা-১০
+                    স্মার্ট ও স্বনির্ভর সাভার
                   </p>
                 </div>
               </motion.div>
@@ -100,13 +99,13 @@ export default function LeaderMessageSection() {
                 <span>জনপ্রতিনিধির অঙ্গীকার</span>
               </div>
               <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-[var(--text)] leading-tight tracking-tight">
-                জনগণের অধিকার রক্ষা ও একটি modern স্মার্ট নির্বাচনী এলাকা গড়াই
+                জনগণের অধিকার রক্ষা ও একটি আধুনিক স্মার্ট সাভার গড়াই
                 আমার মূল লক্ষ্য
               </h2>
 
               <div className="space-y-3.5 text-sm sm:text-base text-[var(--text-2)] leading-relaxed">
                 <p>
-                  আসসালামু আলাইকুম। ঢাকা-১০ আসনের সম্মানিত ও প্রিয় সুধীবৃন্দ,
+                  আসসালামু আলাইকুম। সাভার উপজেলার সম্মানিত ও প্রিয় সুধীবৃন্দ,
                   আপনাদের অমূল্য আস্থা ও ভালোবাসায় অর্পিত দায়িত্ব পালন করাই
                   আমার মূল ব্রত। আমাদের এলাকাকে একটি নিরাপদ, বৈষম্যহীন ও আধুনিক
                   মডেল এলাকায় রূপান্তর করতে আমরা নিরবচ্ছিন্ন কাজ করে যাচ্ছি।
@@ -127,7 +126,7 @@ export default function LeaderMessageSection() {
                     <span>আমাদের মূল ভিশন</span>
                   </div>
                   <p className="text-xs sm:text-sm text-[var(--text-2)] leading-normal">
-                    সুশাসন, স্বচ্ছতা ও জবাবদিহিতা নিশ্চিত করে এলাকাকে পুরোপুরি
+                    সুশাসন, স্বচ্ছতা ও জবাবদিহিতা নিশ্চিত করে সাভারকে পুরোপুরি
                     চাঁদাবাজিমুক্ত করা।
                   </p>
                 </div>

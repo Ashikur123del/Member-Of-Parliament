@@ -27,17 +27,17 @@ const SLIDES = [
   {
     id: 1,
     image: Image1,
-    caption: "মাননীয় সংসদ সদস্য — জনগণের সেবায় নিবেদিত",
+    caption: "সাবেক ভাইস চেয়ারম্যান — সাভার উপজেলা পরিষদ",
   },
   {
     id: 2,
     image: Image2,
-    caption: "জনসভা ও সাধারণ মানুষের মতামত গ্রহণ",
+    caption: "জনসভা ও সাভারের সাধারণ মানুষের মতামত গ্রহণ",
   },
   {
     id: 3,
     image: Image3,
-    caption: "নির্বাচনী এলাকায় উন্নয়নমূলক কাজ পরিদর্শন",
+    caption: "সাভার উপজেলার বিভিন্ন উন্নয়নমূলক কাজ পরিদর্শন",
   },
 ];
 
@@ -66,7 +66,7 @@ export default function HeroSection() {
               className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[var(--primary-light)] text-[var(--primary)] text-sm font-semibold border border-blue-100"
             >
               <span className="w-2.5 h-2.5 rounded-full bg-[var(--primary)] animate-pulse"></span>
-              ঢাকা-১০ আসন | মাননীয় সংসদ সদস্য
+              সাভার উপজেলা পরিষদ | সাবেক ভাইস চেয়ারম্যান
             </motion.div>
 
             <motion.h1
@@ -75,7 +75,7 @@ export default function HeroSection() {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="text-xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[var(--text)] leading-tight"
             >
-              জনগণের ক্ষমতায়ন ও টেকসই উন্নয়নে <br />
+              জনগণের ক্ষমতায়ন ও সাভারের উন্নয়নে <br />
               <span className="text-[var(--primary)]">আপনার পাশে সর্বদা</span>
             </motion.h1>
 
@@ -85,7 +85,7 @@ export default function HeroSection() {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="text-base sm:text-lg text-[var(--text-2)] leading-relaxed max-w-2xl"
             >
-              স্বচ্ছতা, জবাবদিহিতা এবং সুশাসনের মাধ্যমে আমাদের নির্বাচনী এলাকাকে
+              স্বচ্ছতা, জবাবদিহিতা এবং সুশাসনের মাধ্যমে সাভার উপজেলাকে
               একটি সমৃদ্ধশালী, নিরাপদ ও আধুনিক স্মার্ট জনপদ হিসেবে গড়ে তোলাই
               আমাদের প্রধান অঙ্গীকার।
             </motion.p>
@@ -161,7 +161,6 @@ export default function HeroSection() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: 0.6 }}
           >
-
             <motion.div
               animate={{
                 opacity: [0.4, 0.8, 0.4],

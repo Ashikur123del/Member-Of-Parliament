@@ -1,4 +1,5 @@
 "use client";
+
 import { motion, Variants } from "framer-motion";
 import {
   FiMapPin,
@@ -32,9 +33,8 @@ const itemVariants: Variants = {
 
 export const ComplainForm = () => {
   return (
-    <section
-      id="complain-form"
-      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 scroll-mt-10"
+    <section id="complain-form"
+      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 scroll-mt-10 py-10 md:py-20"
     >
       <motion.div
         initial="hidden"
@@ -88,12 +88,12 @@ export const ComplainForm = () => {
               সরাসরি কার্যালয়ে জমা দিন
             </h3>
             <p className="text-xs sm:text-sm text-[var(--text-2)] leading-relaxed mb-4">
-              আপনার লিখিত অভিযোগ বা পরামর্শ সরাসরি এমপি মহোদয়ের স্থানীয় সেবা
-              কার্যালয়ে জমা দিতে পারেন।
+              আপনার লিখিত অভিযোগ বা পরামর্শ সরাসরি দেওয়ান মঈনুদ্দিন বিপ্লব
+              জনসেবা কার্যালয়ে জমা দিতে পারেন।
             </p>
             <div className="text-xs font-semibold text-[var(--primary)] flex items-center gap-1.5">
               <FiMessageSquare />
-              <span>এমপি সেবা কার্যালয়, সাভার ও আশুলিয়া শাখা</span>
+              <span>জনসেবা কার্যালয়, সাভার ও আশুলিয়া অঞ্চল</span>
             </div>
           </motion.div>
 
@@ -113,8 +113,8 @@ export const ComplainForm = () => {
               মেসেজ পাঠান।
             </p>
             <div className="text-xs font-bold text-[var(--primary)] space-y-1">
-              <div>কল সেন্টার: ০৯৬১১-XXXXXX</div>
-              <div>হোয়াটসঅ্যাপ: +৮৮০ ১৭০০-XXXXXX</div>
+              <div>সহায়তা কেন্দ্র: +৮৮০ ১৭০০-০০০০০</div>
+              <div>হোয়াটসঅ্যাপ: +৮৮০ ১৭০০-০০০০০</div>
             </div>
           </motion.div>
 
@@ -131,7 +131,7 @@ export const ComplainForm = () => {
             </h3>
             <p className="text-xs sm:text-sm text-[var(--text-2)] leading-relaxed mb-4">
               অভিযোগ গ্রহণ ও পর্যালোচনা নিয়মিত ভিত্তিতে করা হয়। নির্ধারিত
-              সময়ে শুনানি অনুষ্ঠিত হয়।
+              সময়ে শুনানি অনুষ্ঠিত হয়।
             </p>
             <div className="text-xs font-semibold text-[var(--muted)]">
               সকাল ১০:০০ টা - বিকাল ৫:০০ টা (রবি থেকে বৃহস্পতিবার)

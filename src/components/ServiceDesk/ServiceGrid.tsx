@@ -30,7 +30,7 @@ const services: ServiceItem[] = [
     id: 1,
     title: "অনলাইন সুপারিশপত্র",
     subtitle: "অফিশিয়াল রিকমেন্ডেশন লেটার",
-    desc: "চাকরি, শিক্ষা, পাসপোর্ট বা অন্যান্য প্রাতিষ্ঠানিক কাজের জন্য মাননীয় সংসদ সদস্যের ডিজিটাল সুপারিশপত্র।",
+    desc: "চাকরি, শিক্ষা বা অন্যান্য প্রাতিষ্ঠানিক কাজের জন্য নাগরিক ডিজিটাল সুপারিশপত্রের আবেদন।",
     features: ["স্মার্ট ভেরিফিকেশন", "পিডিএফ ডাউনলোড"],
     responseTime: "২৪-৪৮ ঘণ্টার মধ্যে",
     icon: FiFileText,
@@ -50,7 +50,7 @@ const services: ServiceItem[] = [
   {
     id: 3,
     title: "সাক্ষাৎকারের সময়সূচী",
-    subtitle: "এমপি সাহেবের সাথে সরাসরি বৈঠক",
+    subtitle: "সরাসরি বৈঠক ও আলোচনা",
     desc: "ব্যক্তিগত, সামাজিক বা এলাকাভিত্তিক গুরুত্বপূর্ণ বিষয় নিয়ে সরাসরি মিটিংয়ের জন্য অ্যাপয়েন্টমেন্ট নিন।",
     features: ["তারিখ নির্বাচনের সুবিধা", "এসএমএস নিশ্চিতকরণ"],
     responseTime: "৩-৫ কার্যদিবস",
@@ -60,8 +60,8 @@ const services: ServiceItem[] = [
   {
     id: 4,
     title: "জরুরি মানবিক সহায়তা",
-    subtitle: "দুস্থ ও চিকিৎসা তহবিল সহায়তা",
-    desc: "জরুরি চিকিৎসা, দুস্থ পরিবার সহায়তা বা বিশেষ মানবিক অনুদানের জন্য এমপি ফান্ডের আওতায় আবেদন।",
+    subtitle: "দুস্থ ও চিকিৎসা সহায়তা",
+    desc: "জরুরি চিকিৎসা, দুস্থ পরিবার সহায়তা বা বিশেষ মানবিক অনুদানের জন্য কল্যাণ তহবিলের আওতায় আবেদন।",
     features: ["জরুরি প্রসেসিং", "সহজ শর্তাবলী"],
     responseTime: "জরুরি ভিত্তিতে অগ্রাধিকার",
     icon: FiHeart,
@@ -71,7 +71,7 @@ const services: ServiceItem[] = [
 
 export const ServiceGrid = () => {
   return (
-    <section className="bg-[var--surface)]  px-4 py-10 md:py-20 sm:px-6 lg:px-8">
+    <section className="bg-[var(--surface)] px-4 py-10 md:py-20 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 border-b border-[var(--border)] pb-6">
           <div>
@@ -141,14 +141,14 @@ export const ServiceGrid = () => {
                 <div className="mt-2 pt-4 border-t border-[var(--border)]/40 space-y-4">
                   <div className="flex items-center gap-2 text-xs font-semibold text-[var(--muted)]">
                     <FiClock className="text-sm text-[var(--primary)]" />
-                    <span>গড় সময়: {item.responseTime}</span>
+                    <span>গড় সময়: {item.responseTime}</span>
                   </div>
 
                   <Link
                     href="#complain-form"
-                    className="w-full py-3 px-4 text-sm font-bold rounded-xl bg-[var(--primary)]/10 text-[var(--primary)]  flex items-center justify-center gap-2 transition-all duration-300 shadow-sm"
+                    className="w-full py-3 px-4 text-sm font-bold rounded-xl bg-[var(--primary)]/10 text-[var(--primary)] flex items-center justify-center gap-2 transition-all duration-300 shadow-sm hover:bg-[var(--primary)] hover:text-white"
                   >
-                    <span className="">{item.actionText}</span>
+                    <span>{item.actionText}</span>
                     <FiArrowRight className="text-base transform group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>

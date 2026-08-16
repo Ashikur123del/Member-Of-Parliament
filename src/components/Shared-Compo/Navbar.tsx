@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import NavbarClient from "./navbar-client";
-import Image5 from "@/assets/img-1.jpg";
+import Image5 from "@/assets/LOGO.png";
 
 const NAV_LINKS = [
   { label: "হোম", href: "/" },
@@ -24,7 +24,7 @@ export default function Navbar() {
             href="/" 
             className="flex items-center gap-2.5 sm:gap-3 group focus:outline-none shrink-0"
           >
-            <div className="relative w-10 h-10 sm:w-14 sm:h-14 rounded-full overflow-hidden border-2 border-[var(--primary)] shadow-md group-hover:scale-105 transition-transform shrink-0">
+            <div className="relative w-10 h-10 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 border-[var(--primary)] shadow-md group-hover:scale-105 transition-transform shrink-0">
               <Image 
                 src={Image5} 
                 alt="দেওয়ান মঈনুদ্দিন বিপ্লব"
@@ -39,8 +39,8 @@ export default function Navbar() {
               <span className="font-extrabold text-xs sm:text-base md:text-lg leading-tight tracking-tight text-[var(--text)] group-hover:text-[var(--primary)] transition-colors whitespace-nowrap">
                 দেওয়ান মঈনুদ্দিন বিপ্লব
               </span>
-              <span className="text-[9px] sm:text-xs font-medium text-[var(--text-2)] leading-tight whitespace-nowrap">
-                সংসদীয় আসন ১৯২ (ঢাকা-১৯)
+              <span className="text-[11px] sm:text-[13px] font-medium text-[var(--text-2)] leading-tight whitespace-nowrap">
+               সাবেক ভাইস চেয়ারম্যান, <br className="block md:hidden"/> সাভার উপজেলা পরিষদ
               </span>
             </div>
           </Link>

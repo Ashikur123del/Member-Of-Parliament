@@ -10,32 +10,32 @@ import { MediaCoverage } from "@/components/Gallery/MediaCoverage";
 export default function GalleryPage() {
   return (
     <>
-      <HeroBio
-        badgeText="মিডিয়া ও চিত্র গ্যালারি"
-        badgeIcon={FiAward}
-        image={Image5}
-        name="দেওয়ান মঈনুদ্দিন বিপ্লব"
-        title="সংসদীয় আসন ১৯২ (ঢাকা-১৯ - সাভার ও আশুলিয়া)"
-        description="সাভার ও আশুলিয়ার উন্নয়ন মূলক কর্মকাণ্ড, প্রেস ব্রিফিং, মাঠপর্যায়ের পরিদর্শন ও জনসেবামূলক ইভেন্টের সার্বিক চিত্রপট।"
-        stats={[
-          { label: "ছবি", value: "৫০+" },
-          { label: "ভিডিও", value: "২০+" },
-          { label: "প্রেস রিপোর্ট", value: "১৫+" },
-        ]}
-        actions={[
-          {
-            label: "যোগাযোগ করুন",
-            href: "/contact",
-            variant: "primary",
-            icon: FiArrowRight,
-          },
-          {
-            label: "চলমান প্রকল্প",
-            href: "/projects",
-            variant: "outline",
-          },
-        ]}
-      />
+  <HeroBio
+  badgeText="চিত্র ও মিডিয়া গ্যালারি"
+  badgeIcon={FiAward}
+  image={Image5}
+  name="দেওয়ান মঈনুদ্দিন বিপ্লব"
+  title="সাবেক ভাইস চেয়ারম্যান, সাভার উপজেলা পরিষদ"
+  description="সাভার ও আশুলিয়া এলাকার উন্নয়নমূলক কর্মকাণ্ড, রাজনৈতিক ও সামাজিক কর্মসূচি, মাঠপর্যায়ের পরিদর্শন এবং জনসেবামূলক ইভেন্টের সচিত্র ডকুমেন্টেশন।"
+  stats={[
+    { label: "ছবি", value: "৫০+" },
+    { label: "ভিডিও", value: "২০+" },
+    { label: "প্রেস রিপোর্ট", value: "১৫+" },
+  ]}
+  actions={[
+    {
+      label: "যোগাযোগ করুন",
+      href: "/contact",
+      variant: "primary",
+      icon: FiArrowRight,
+    },
+    {
+      label: "চলমান প্রকল্প",
+      href: "/projects",
+      variant: "outline",
+    },
+  ]}
+/>
 
       <PhotoGallery />
       <VideoNewsSection />

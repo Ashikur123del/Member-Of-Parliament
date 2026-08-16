@@ -10,6 +10,7 @@ import {
   FiPlusCircle,
   FiRadio,
 } from "react-icons/fi";
+import Link from "next/link";
 
 interface ContactItem {
   id: number;
@@ -103,13 +104,13 @@ export const EmergencyContacts = () => {
               </p>
             </div>
           </div>
-          <a
+          <Link
             href="tel:999"
             className="w-full sm:w-auto px-6 py-3 rounded-xl bg-white text-[var(--primary-hover)] font-bold text-xs sm:text-sm flex items-center justify-center gap-2 hover:bg-slate-100 transition-colors shrink-0 shadow-sm"
           >
             <FiPhoneCall className="text-base" />
             <span>এখনই কল করুন (৯৯৯)</span>
-          </a>
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -138,13 +139,13 @@ export const EmergencyContacts = () => {
                   </div>
                 </div>
 
-                <a
+                <Link
                   href={`tel:${item.phone}`}
                   title={`${item.name}-এ কল করুন`}
                   className="p-3 rounded-xl bg-[var(--primary-light)] text-[var(--primary)] hover:bg-[var(--primary)] hover:text-white transition-all shadow-sm shrink-0"
                 >
                   <FiPhoneCall className="text-base" />
-                </a>
+                </Link>
               </motion.div>
             );
           })}

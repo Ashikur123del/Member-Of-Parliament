@@ -39,7 +39,7 @@ export default function Footer(): React.ReactElement {
                   দেওয়ান মঈনুদ্দিন বিপ্লব
                 </span>
                 <span className="text-xs text-[var(--text-2)] font-bold">
-                  সাভার ও আশুলিয়া (ঢাকা-১৯)
+                  সাবেক ভাইস চেয়ারম্যান, <br className="block md:hidden"/> সাভার উপজেলা পরিষদ
                 </span>
               </div>
             </Link>
@@ -50,7 +50,7 @@ export default function Footer(): React.ReactElement {
 
             {/* Social Links */}
             <div className="flex items-center gap-2.5 pt-2">
-              <a
+              <Link
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -58,8 +58,8 @@ export default function Footer(): React.ReactElement {
                 className="w-10 h-10 rounded-xl bg-[var(--surface)] border border-[var(--border)] flex items-center justify-center text-[var(--text-2)] hover:text-[var(--primary)] hover:border-[var(--primary)] transition-all text-lg"
               >
                 <FiFacebook />
-              </a>
-              <a
+              </Link>
+              <Link
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -67,8 +67,8 @@ export default function Footer(): React.ReactElement {
                 className="w-10 h-10 rounded-xl bg-[var(--surface)] border border-[var(--border)] flex items-center justify-center text-[var(--text-2)] hover:text-[var(--primary)] hover:border-[var(--primary)] transition-all text-lg"
               >
                 <FiTwitter />
-              </a>
-              <a
+              </Link>
+              <Link
                 href="https://youtube.com"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -76,8 +76,8 @@ export default function Footer(): React.ReactElement {
                 className="w-10 h-10 rounded-xl bg-[var(--surface)] border border-[var(--border)] flex items-center justify-center text-[var(--text-2)] hover:text-rose-500 hover:border-rose-500 transition-all text-lg"
               >
                 <FiYoutube />
-              </a>
-              <a
+              </Link>
+              <Link
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -85,7 +85,7 @@ export default function Footer(): React.ReactElement {
                 className="w-10 h-10 rounded-xl bg-[var(--surface)] border border-[var(--border)] flex items-center justify-center text-[var(--text-2)] hover:text-[var(--primary)] hover:border-[var(--primary)] transition-all text-lg"
               >
                 <FiLinkedin />
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -191,15 +191,15 @@ export default function Footer(): React.ReactElement {
               </li>
               <li className="flex items-center gap-2.5">
                 <FiPhone className="text-[var(--primary)] shrink-0 text-lg" />
-                <a href="tel:+8801700000000" className="hover:text-[var(--primary)] font-bold">
+                <Link href="tel:+8801700000000" className="hover:text-[var(--primary)] font-bold">
                   +৮৮০ ১৭০০-০০০০০০
-                </a>
+                </Link>
               </li>
               <li className="flex items-center gap-2.5">
                 <FiMail className="text-[var(--primary)] shrink-0 text-lg" />
-                <a href="mailto:contact@mp-savarasulia.gov.bd" className="hover:text-[var(--primary)] font-bold">
+                <Link href="mailto:contact@mp-savarasulia.gov.bd" className="hover:text-[var(--primary)] font-bold">
                   contact@mp-savarasulia.gov.bd
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

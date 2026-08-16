@@ -26,11 +26,10 @@ export const NewsHero: React.FC<NewsHeroProps> = ({
             সাম্প্রতিক হালনাগাদ
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[var(--text)] leading-tight">
-            সংবাদ ও আপডেট
+            সংবাদ ও গণসংযোগ
           </h1>
           <p className="text-sm sm:text-base text-[var(--text-2)] leading-relaxed">
-            সাভার ও আশুলিয়া এলাকার উন্নয়নমূলক কার্যক্রম, ঘোষণা, নোটিশ এবং
-            সর্বশেষ নাগরিক খবরাখবর একনজরে জেনে নিন।
+            সাভার উপজেলা পরিষদের সাবেক ভাইস চেয়ারম্যান দেওয়ান মঈনুদ্দিন বিপ্লব-এর সার্বিক উন্নয়নমূলক কার্যক্রম, সামাজিক উদ্যোগ, গণসংযোগ ও গুরুত্বপূর্ণ নোটিশ একনজরে জেনে নিন।
           </p>
 
           <div className="pt-4 max-w-xl mx-auto">

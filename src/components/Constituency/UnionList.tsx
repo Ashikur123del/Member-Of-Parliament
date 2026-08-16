@@ -19,6 +19,8 @@ export function UnionList(): React.ReactElement {
     { name: "তেঁতুলঝোড়া ইউনিয়ন", area: "সাভার", code: "ওয়ার্ড ১-৯" },
     { name: "ভাকুর্তা ইউনিয়ন", area: "সাভার", code: "ওয়ার্ড ১-৯" },
     { name: "কাউন্দিয়া ইউনিয়ন", area: "সাভার", code: "ওয়ার্ড ১-৯" },
+    { name: "আমিনবাজার ইউনিয়ন", area: "সাভার", code: "ওয়ার্ড ১-৯" },
+    { name: "বনগাঁও ইউনিয়ন", area: "সাভার", code: "ওয়ার্ড ১-৯" },
     { name: "সাভার পৌরসভা", area: "সাভার", code: "৯টি ওয়ার্ড" },
   ];
 
@@ -56,7 +58,7 @@ export function UnionList(): React.ReactElement {
           </h2>
 
           <p className="text-sm font-bold sm:text-base text-[var(--muted)]">
-            ঢাকা-১৯ আসনের অধীনে থাকা সাভার ও আশুলিয়ার প্রশাসনিক অঞ্চলসমূহ
+            সাভার উপজেলা পরিষদের সাবেক ভাইস চেয়ারম্যানের প্রিয় কর্মক্ষেত্র—সাভার ও আশুলিয়ার প্রশাসনিক অঞ্চলসমূহ
           </p>
         </motion.div>
 
@@ -65,7 +67,7 @@ export function UnionList(): React.ReactElement {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-4"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4"
         >
           {unions.map((item: UnionItem, idx: number) => (
             <motion.div

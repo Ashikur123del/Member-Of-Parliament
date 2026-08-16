@@ -26,16 +26,16 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const statusMap = {
     ongoing: {
-      label: "চলমান",
-      bg: "bg-amber-500/10 text-amber-600 border-amber-500/20",
+      label: "চলমান উন্নয়ন",
+      bg: "bg-amber-500/10 text-amber-600 border-amber-500/30 backdrop-blur-md",
     },
     completed: {
-      label: "সম্পন্ন",
-      bg: "bg-emerald-500/10 text-emerald-600 border-emerald-500/20",
+      label: "সম্পন্ন প্রকল্প",
+      bg: "bg-emerald-500/10 text-emerald-600 border-emerald-500/30 backdrop-blur-md",
     },
     proposed: {
-      label: "পরিকল্পিত",
-      bg: "bg-blue-500/10 text-blue-600 border-blue-500/20",
+      label: "পরিকল্পিত প্রস্তাবনা",
+      bg: "bg-blue-500/10 text-blue-600 border-blue-500/30 backdrop-blur-md",
     },
   };
 
@@ -47,36 +47,47 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      whileHover={{ y: -6 }}
-      className="w-full flex flex-col md:flex-row rounded-xl bg-[var(--surface-2)] border border-[var(--border)] hover:border-[var(--primary)]/40 transition-all duration-300 hover:shadow-xl overflow-hidden group"
+      whileHover={{ y: -4 }}
+      className="w-full flex flex-col rounded-2xl bg-[var(--surface-2)] border border-[var(--border)] hover:border-[var(--primary)]/50 transition-all duration-300 hover:shadow-xl overflow-hidden group"
     >
-      <div className="relative w-full md:w-1/2 shrink-0 min-h-[280px] sm:min-h-[340px] md:min-h-[380px] bg-[var(--surface)] overflow-hidden">
+      {/* Banner Section - Auto Aspect Ratio so NO Text or Image gets cropped */}
+      <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] lg:aspect-[24/9] bg-[var(--surface)] overflow-hidden">
         <Image
           src={project.image}
           alt={project.title}
           fill
-          className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-          sizes="(max-width: 768px) 100vw, 50vw"
+          className="object-contain sm:object-cover object-center group-hover:scale-102 transition-transform duration-500 ease-out"
+          sizes="(max-width: 1200px) 100vw, 1200px"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/60 via-transparent to-transparent opacity-60" />
-        <span
-          className={`absolute top-4 left-4 text-xs font-bold px-3.5 py-1 rounded-full border shadow-md backdrop-blur-md ${statusInfo.bg}`}
-        >
-          {statusInfo.label}
-        </span>
+
+        {/* Soft Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
+
+        {/* Badges on Top Left */}
+        <div className="absolute top-3 left-3 sm:top-4 sm:left-4 flex flex-wrap gap-2 z-10">
+          <span
+            className={`text-xs font-bold px-3 py-1 rounded-full border shadow-sm ${statusInfo.bg}`}
+          >
+            {statusInfo.label}
+          </span>
+          <span className="text-xs font-bold px-3 py-1 rounded-full bg-[var(--surface)]/90 text-[var(--text)] border border-[var(--border)] backdrop-blur-md shadow-sm">
+            {project.category}
+          </span>
+        </div>
       </div>
 
-      <div className="p-6 sm:p-8 md:p-10 w-full md:w-1/2 flex flex-col justify-between space-y-4">
-        <div className="space-y-3">
+      {/* Content Section */}
+      <div className="p-5 sm:p-7 w-full flex flex-col justify-between space-y-4">
+        <div className="space-y-2.5">
           <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm text-[var(--muted)] font-medium">
-            <span className="flex items-center gap-1.5">
-              <FiMapPin className="text-[var(--primary)] text-sm sm:text-base" />{" "}
+            <span className="flex items-center gap-1.5 text-[var(--primary)] font-semibold">
+              <FiMapPin className="text-base shrink-0" />
               {project.location}
             </span>
             <span>•</span>
             <span className="flex items-center gap-1.5">
-              <FiCalendar className="text-sm sm:text-base" /> {project.date}
+              <FiCalendar className="text-base shrink-0" /> {project.date}
             </span>
           </div>
 
@@ -90,12 +101,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         </div>
 
         {project.status === "ongoing" && project.progress !== undefined && (
-          <div className="space-y-2 pt-4 border-t border-[var(--border)]">
+          <div className="space-y-2 pt-3 border-t border-[var(--border)]">
             <div className="flex justify-between text-xs sm:text-sm font-bold">
-              <span className="text-[var(--text-2)]">অগ্রগতি</span>
+              <span className="text-[var(--text-2)]">উন্নয়ন অগ্রগতি</span>
               <span className="text-[var(--primary)]">{project.progress}%</span>
             </div>
-            <div className="w-full h-2.5 bg-[var(--surface)] rounded-full overflow-hidden">
+            <div className="w-full h-2.5 bg-[var(--surface)] rounded-full overflow-hidden border border-[var(--border)]/40">
               <motion.div
                 initial={{ width: 0 }}
                 whileInView={{ width: `${project.progress}%` }}

@@ -2,17 +2,23 @@
 
 import React from "react";
 import { FiCheckSquare, FiClock, FiLayers, FiUsers } from "react-icons/fi";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
-export function ProjectStats() {
-  const stats = [
-    { label: "সম্পন্ন প্রকল্প", value: "৩৫টি", icon: FiCheckSquare },
-    { label: "চলমান উন্নয়ন", value: "১২টি", icon: FiClock },
-    { label: "পরিকল্পিত প্রজেক্ট", value: "৮টি", icon: FiLayers },
-    { label: "উপকৃত পরিবার", value: "১.৫ লক্ষ+", icon: FiUsers },
+interface StatItem {
+  label: string;
+  value: string;
+  icon: React.ElementType;
+}
+
+export function ProjectStats(): React.ReactElement {
+  const stats: StatItem[] = [
+    { label: "সম্পন্ন উন্নয়ন কাজ", value: "৩৫টি", icon: FiCheckSquare },
+    { label: "চলমান অবকাঠামো", value: "১২টি", icon: FiClock },
+    { label: "পরিকল্পিত জনসেবা", value: "৮টি", icon: FiLayers },
+    { label: "উপকৃত সাধারণ পরিবার", value: "১.৫ লক্ষ+", icon: FiUsers },
   ];
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
@@ -22,7 +28,7 @@ export function ProjectStats() {
     },
   };
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: { opacity: 0, y: 25 },
     show: {
       opacity: 1,
@@ -34,8 +40,14 @@ export function ProjectStats() {
   };
 
   return (
-    <section className="py-8 bg-[var(--surface-2)] border-y border-[var(--border)] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-10 bg-[var(--surface-2)] border-y border-[var(--border)] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+        <div className="text-center max-w-xl mx-auto">
+          <p className="text-xs sm:text-sm font-bold text-[var(--primary)] uppercase tracking-wider">
+            সাভার উপজেলা পরিষদের সাবেক ভাইস চেয়ারম্যানের উন্নয়ন চিত্র
+          </p>
+        </div>
+
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -43,7 +55,7 @@ export function ProjectStats() {
           viewport={{ once: true, margin: "-50px" }}
           className="grid grid-cols-2 lg:grid-cols-4 gap-4"
         >
-          {stats.map((item, idx) => {
+          {stats.map((item: StatItem, idx: number) => {
             const Icon = item.icon;
             return (
               <motion.div
